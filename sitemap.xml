@@ -6,96 +6,76 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+
 <url>
   <loc>https://grzegorzpod.github.io/hobby/</loc>
-  <lastmod>2011-05-26T14:41:39+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/index.html</loc>
-  <lastmod>2011-05-26T14:41:39+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/nasluch_radiowy.htm</loc>
-  <lastmod>2011-05-26T14:11:39+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/komputer.htm</loc>
-  <lastmod>2011-05-26T14:11:46+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/download.htm</loc>
-  <lastmod>2011-05-26T16:12:06+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/start-en.htm</loc>
-  <lastmod>2011-05-26T14:11:47+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/podzial_czestotliwosci.htm</loc>
-  <lastmod>2011-05-26T14:11:36+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/nasluch_radio1.htm</loc>
-  <lastmod>2011-05-26T14:11:41+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/konwertery.htm</loc>
-  <lastmod>2011-05-26T14:11:46+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/nasluch_ssb.htm</loc>
-  <lastmod>2011-05-26T14:11:39+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/nasluch_det.htm</loc>
-  <lastmod>2011-05-26T14:11:41+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/nasluch_118.htm</loc>
-  <lastmod>2011-05-26T14:11:43+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/nasluch_blokada.htm</loc>
-  <lastmod>2011-05-26T14:11:41+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/szereg_sprzet.htm</loc>
-  <lastmod>2011-05-26T14:11:31+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/szereg_oprogramowanie.htm</loc>
-  <lastmod>2011-05-26T14:11:37+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/modem_am.htm</loc>
-  <lastmod>2011-05-26T14:11:43+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/porty_pc_zastosowania.htm</loc>
-  <lastmod>2011-05-26T14:11:37+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/pomiar_napiecia_pc.htm</loc>
-  <lastmod>2011-05-26T14:11:37+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/transmisja_danych_na_podczerwien.htm</loc>
-  <lastmod>2011-05-26T14:11:29+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/pc_i2c.htm</loc>
-  <lastmod>2011-05-26T14:11:37+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/termo.htm</loc>
-  <lastmod>2011-05-26T14:11:37+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/termostat_ds1821.htm</loc>
-  <lastmod>2011-05-26T14:11:30+00:00</lastmod>
 </url>
 <url>
   <loc>https://grzegorzpod.github.io/hobby/generator_ds1065.htm</loc>
-  <lastmod>2011-05-26T14:11:37+00:00</lastmod>
 </url>
+
+
 </urlset>
