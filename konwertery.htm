@@ -1,0 +1,264 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Description" content="Konwertery radiowe w oparciu UL1042N LA1185 BF966S" />
+    <title>
+      Konwertery
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18402278-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    //]]>
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h2>
+          Elektronika, komputer, radio - blog, projekty
+        </h2><a href="https://grzegorzpod.github.io/hobby">https://grzegorzpod.github.io/hobby</a>
+      </div>
+      <div id="nav1">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li class="akt">
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li>
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="linki.htm">Linki</a>
+          </li>
+          <li>
+            <a href="start-en.htm"><img alt="English" title="English" src="gb.gif" width="30"
+            height="15" /></a>
+          </li>
+        </ul>
+      </div>
+      <div id="ad2">
+      </div>
+      <div id="body">
+        <h2>
+          Konwertery  
+        </h2>
+        <p>
+          Konwerter to układ elektroniczny, który włącza się między antenę a gniazdo
+          antenowe radioodbiornika. Jego zadaniem jest przemiana częstotliwości. Częstotliwość
+          na wyjściu konwertera jest równa częstotliwości na wejściu zwiększonej (lub
+          zmniejszonej) o częstotliwość wewnętrznego oscylatora konwertera - zazwyczaj
+          kwarcowego. Typowe zastosowanie to odbiór stacji z górnego UKFu na starym radiu z
+          dolnym UKFem lub fal długich na odbiorniku średniofalowym.
+        </p>
+        <h3>
+          A oto najczęściej stosowane układy konwerterów :
+        </h3>
+        <ul>
+          <li>
+            <a href="#Konwerter%20na%20UL1042N">Konwerter na UL1042N</a>
+          </li>
+          <li>
+            <a href="#Konwerter%20na%20LA1185">Konwerter na LA1185</a>
+          </li>
+          <li>
+            <a href="#Konwerter%20na%20BF966S%20z%20oscylatorem%20kwarcowym">Konwerter na BF966S z
+            oscylatorem kwarcowym</a>
+          </li>
+        </ul>
+        <a name="Konwerter na UL1042N"></a>
+		<h3>Konwerter na UL1042N</h3>
+		<img src="koul1042.gif" width="412" height="171" alt="Image" />
+        <h4>
+          dane:
+        </h4>
+        <ul>
+          <li>C2 - 27pF
+          </li>
+          <li>XTAL - kwarc
+          </li>
+          <li>L2,C1 - wejściowy obwód LC
+          </li>
+          <li>L3,C3 - wyjściowy obwód LC
+          </li>
+          <li>w uzasadnionych przypadkach R1 można zmniejszyć albo pominąć.
+          </li>
+        </ul>
+        <h4>
+          Konkretne przykłady wykorzystania powyższego konwertera:
+        </h4>
+        <h4>
+          Odbiór pasma CB27MHz na odbiorniku średniofalowym.
+        </h4>
+        <p>
+          Wejściowy obwód stanowi cewka od Walke-Talke i kondensator 47pF. Jako wyjściowy obwód
+          użyłem wejściowego obwodu LC odbiornika na fale średnie - akurat jeden koniec cewki
+          łączył się w nim z masą, która była jednocześnie dla mojego konwertera, taki
+          sposób wymuszał użycie bateryjki do jego zasilania, której łączył się z masą
+          odbiornika. Zrezygnowałem z rezystora ograniczającego R1, żeby nie komplikować
+          układu. Kwarc miał 26.6MHz ale można użyć dowolnego z 25-26 lub 28-29MHz. Strojenie
+          polegało na kręceniu rdzeniem w cewce wejściowej na max sygnału. Taki układ miał
+          rewelacyjną czułość. (Trochę gorzej było z selektywnością). I odbierał zakres
+          mniej - więcej od 14 kanału do pasma amatorskiego 28MHz.
+        </p>
+        <h4>
+          Odbiór czegokolwiek na odbiorniku z dolnym UKFem.
+        </h4>
+        <p>
+          Tu zalecam użycie fabrycznego konwertera UKF-FM, ew. wymianę kwarcu i doświadczalne
+          zmniejszanie zwojów w cewce wejściowej lub pojemności towarzyszącego jej
+          kondensatora. Na kwarcu 26.6MHz (3 harmoniczna) udało mi się odbierać przemiennik na
+          pasmo 2m w okolicach 65MHz. Sporadycznie jakieś telefony bezprzewodowe itd. Niestety tu
+          dokładne zestrojenie obwodu wejściowego niewiele pomaga. I tak przebiją się stacje z
+          fal krótkich, lokalni CBści i stacje z górnego UKFu, które ograniczą zakres
+          możliwości układu.
+        </p>
+        <h4>
+          Montaż:
+        </h4>
+        <p>
+          Najlepiej zdobyć fabryczny konwerter UKF(65-74MHz)--&gt;(88-108MHz) na tym scalaku,
+          dostosować obwody LC do naszych potrzeb i ewentualnie wymienić kwarc. Takie konwertery
+          montowano w radiach sprowadzonych z zachodu przed 1993 rokiem. Pare lat temu w wyniku
+          powtórnego przestrajania (powrót na górny UKF) okazują się zbędne. Może właśnie
+          w twoim starym magnetofonie siedzi taka płytka...
+        </p>
+         <a name="Konwerter na LA1185"></a>
+		 <h3>Konwerter na LA1185</h3>
+         <img border="1" src="kola1185.gif" width="374" height="208" alt="Image" />
+        <div class="adp">
+        </div>
+        <h4>
+          dane:
+        </h4>
+        <ul>
+          <li>XTAL - kwarc
+          </li>
+          <li>L2,C2 i L3,C4 - wejściowe obwody LC
+          </li>
+          <li>L4,C6 - wyjściowy obwód LC
+          </li>
+          <li>minus na masie
+          </li>
+        </ul>
+        <p>
+          Przy pomocy układu z kwarcem 26.6MHz (27.125MHz też powinien działać) udało mi się
+          dość dobrze odbierać na częstotliwościach ok.65MHz przemiennik. Stacje radiofoniczne
+          tak nie przeszkadzały jak w poprzednim układzie. Cewki wydobyłem z fabrycznego
+          konwertera:
+        </p>
+        <ul>
+          <li>L1 nawinięta obok L2 na tym samym korpusie z rdzeniem wkręcanym o śred. 4mm:
+          </li>
+          <li>L1: 3zw. 0,1
+          </li>
+          <li>L2,L3: 4zw. 0,4 srebrzanką
+          </li>
+        </ul>
+        <p>
+          funkcję obwodu L4C6 pełnił obwód wejściowy odbiornika (Radioodbiornik Beskid), w
+          którym masa była dla konwertera - użyłem zasilania z baterii. Ewentualną cewkę
+          L4-L5 można wykonać tak jak L1-L2 ale pojemność towarzyszącego jej kondensatora
+          trzeba zwiększyć do ok.27pF.
+        </p>
+        <h4>
+          Strojenie:
+        </h4>
+        <p>
+          Rdzenie cewek L2 i L3 wkręcić ok. do połowy Znaleźć jakąś stację UKF pracującą
+          na częstotliwości ok.92.2MHz, wykręcić rdzenie tak, aby stacja trochę przycichła i
+          czatować aż coś się odezwie. Jeśli będzie to przemiennik to możemy śmiało
+          stroić obie cewki na min szumów i max sygnału. Strojenie zaczynamy od cewki L3, która
+          stroi się bardziej ostro niż L2.
+        </p>
+        <h4>
+          Montaż:
+        </h4>
+        <p>
+          gotową płytkę pod ten scalak można znaleźć w ofercie firmy AVT jako kit AVT-2396
+          (konwerter UKF). Oprócz tego parę polskich firm produkuje konwertery i głowice na tym
+          scalaku. Wystarczy zdobyć taki konwerter i dokonać w nim niezbędnych przeróbek
+          (wymiana LC ew. kwarcu).
+        </p>
+        <h3>Konwerter na BF966S z oscylatorem kwarcowym</h3>
+		<a name="Konwerter na BF966S z oscylatorem kwarcowym"></a>
+        <img src="kobf9661.gif" width="285" height="184" alt="Image" />
+        <div class="adp">
+        </div>
+        <p>
+          Powyższy konwerter służy do odbioru lokalnych stacji 2m (np.przemiennika), pełny opis
+          podobnego układu można znależć w Świat Radio 10/96.
+        </p>
+        <h4>
+          Najważniejsze dane:
+        </h4>
+        <ul>
+          <li>L1,L2: 4zw srebrzanki o śred. 1mm na korpusie z rdzeniem o śred. 4mm
+          </li>
+          <li>L3: 1zw drutu w izolacji igielitowej pomiędzy zwojami L2
+          </li>
+          <li>OSC: trójkońcówkowy oscylator kwarcowy 40MHz
+          </li>
+        </ul>
+        <h4>
+          Montaż:
+        </h4>
+        <p>
+          Układ najlepiej zamontować metodą przestrzenną w małej metalowej obudowie używanej
+          do filtrów antenowych.
+        </p>
+        <p>
+          Oprócz zalet (takich jak duża czułość) tego typu konwertery mają dwie istotne wady:
+        </p>
+        <ul>
+          <li>Na wyjściu ma prawo się znaleźć zarówno sygnał wejściowy jak i sygnał z
+          heterodyny, czego nie można powiedzieć o rozwiązaniach opartych o scalaki (mieszacze
+          zrównoważone)
+          </li>
+          <li>wymagają dobrze odfiltrowanego zasilania (najlepiej zasilać je z baterii)
+          </li>
+        </ul>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li class="akt">
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li>
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="index.html">Polski</a>
+          </li>
+          <li>
+            <a href="start-en.htm">English</a>
+          </li>
+        </ul>
+        <p>
+          (C) Grzegorz Podgórski 2000-2011
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

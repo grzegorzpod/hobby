@@ -1,0 +1,163 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Description" content=
+    "Opis przestrojenia zwykłego odbiornika UKF na pasmo lotnicze" />
+    <title>
+      Przestrojenie radia UKF na 118-170MHz
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18402278-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    //]]>
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h2>
+          Elektronika, komputer, radio - blog, projekty
+        </h2><a href="https://grzegorzpod.github.io/hobby">https://grzegorzpod.github.io/hobby</a>
+      </div>
+      <div id="nav1">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li class="akt">
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li>
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="start-en.htm"><img alt="English" title="English" src="gb.gif" width="30"
+            height="15" /></a>
+          </li>
+        </ul>
+      </div>
+      <div id="ad2">
+      </div>
+      <div id="body">
+        <h2>
+          Przestrojenie radia UKF na 118-170MHz 
+        </h2>
+        <p>
+          Procedura jest ta sama jak przy przestrajaniu na górny UKF: dobieramy się do LC w
+          obwodzie kolektora pierwszego stopnia wzmacniacza w.cz i do LC w obwodzie heterodyny.
+          Różnica jest taka, że przy przestrajaniu na górny UKF trzeba zmniejszyć wartości
+          kondensatorów, tu trzeba je całkowicie usunąć (wylutować przynajmniej jedną
+          nóżkę). Rzadko kiedy zdarza się, żeby po tej operacji heterodyna działała
+          prawidłowo - oznaką tego jest cisza w eterze odbierana przez odbiornik. Trzeba wtedy
+          zmniejszyć wartość kondensatora łączącego emiter z masą tranzystora heterodyny.
+          Zazwyczaj ma on wartość 47pF lub więcej, a trzeba go zmniejszyć mniej więcej
+          dwu-trzykrotnie np.15pF. Po tej operacji powinniśmy już usłyszeć jakieś "śmieci"
+          lub stacje amatorskie, i coś tam jeszcze w zależności od regionu. Teraz można
+          podstroić LC w obwodzie kolektora 1 stopnia w.cz dotykając cewki np. skuwką od
+          długopisu i skurczając (rozciągając ją) aż znikną szumy (poprawi się
+          wyrazistość odbieranego sygnału) - nie zawsze jest to zabieg potrzebny. Trzeba jednak
+          pamiętać, że nie da się współbieżnie stroić dwóch LC w tak szerokim zakresie -
+          trzeba sobie wybrać jakiś fragment pasma i pod niego się podstrajać. Jako anteny
+          można użyć kawałka drutu lub dipola pętlowego o długości ok. 80cm, połączonego z
+          wejściem antenowym w radiu kablem symetrycznym 300ohm ("płaskim").
+        </p>
+        <p>
+          Po przestrojeniu zalecam zmianę sposobu zasilania. Zazwyczaj w tego typu radiach blok
+          pośredniej i wysokiej częstotliwości zasilany jest napięciem niestabilizowanym.
+          Spadek napięcia w sieci energetycznej powoduje odstrojenie heterodyny nawet o kilkaset
+          kHz. Proponuję odnaleźć rezystor łączący wyjście prostownika z gałęzią napięć
+          zasilających blok wcz (a czasami przedwzmacniacz m.cz) i zastąpić go stabilizatorem
+          78XX dobranym w przybliżeniu na panujące tam napięcia.
+        </p>
+        <div class="adp">
+        </div>
+        <h3>
+          W praktyce wygląda to tak (radioodbiornik "Beskid"):
+        </h3>
+        <h4>
+          Zacznę od czynności najważniejszych:
+        </h4>
+        <ul>
+          <li>wylutuj kondensatory: C15 (39pF), C5(43pF)
+          </li>
+          <li>zamiast C10(47pF) wlutuj kondensator 15pF
+          </li>
+        </ul>
+        <p>
+          Teraz możesz spróbować coś złapać (po podłączeniu kawałka drutu jako anteny,
+          wetkniętego w jedna z dwu dziurek 300Ohm), bo radio jest przestrojone. Powinieneś już
+          odbierać przynajmniej jakieś stacje z górnego UKF gdzieś na początku zakresu, albo
+          cos z pasma lotniczego. Oczywiście trzeba radio podstroić. Czynności, które zwiększa
+          czułość:
+        </p>
+        <ul>
+          <li>wylutuj C1(27pF)
+          </li>
+          <li>zamiast C3(27pF) wlutuj Trymer 15pF
+          </li>
+        </ul>
+        <p>
+          Teraz podłącz jakąś antenę (na początek kawałek drutu). Włączasz radio i
+          kręcisz gałka strojenia. U mnie na początku zakresu, tak do 68MHz na skali, mam stacje
+          z górnego UKFu, do 70MHz pasmo lotnicze-charakterystyczne rozmowy po angielsku, dalej
+          pasmo 2m (dobrze słychać tylko przemiennik), częstotliwości rzędu 160-170MHz będą
+          odbierane zaraz za pasmem 2m. Jeśli cos złapiesz (najlepiej w paśmie lotniczym) to
+          delikatnie ściskasz lub rozciągasz cewkę L2 (przy pomocy np. skuwki) i niezależnie
+          kręcisz trymerem 15pF, tak aby poprawić wyrazistość odbioru. Gdyby nic nie było
+          słychać to znaczy, ze cos jest nie tak z radiem. Może za mała czułość, może ma
+          rozstrajana częstotliwość pośrednia. U mnie pomogło wtedy kręcenie potencjometrem
+          R22. Jeśli chodzi o antenę, to najlepiej by nią był dipol pętlowy o długości ok.
+          1m podłączony oczywiście płaskim kabelkiem 300Ohm. Możesz tez podłączyć każda
+          inna kablem 75Ohm - wtedy żyłkę wtykasz w którąś z dziurek (doświadczalnie)
+          300Ohm, a oplot łączysz z masa radia.
+        </p>
+        <h3>
+          Przydatne informacje:
+        </h3>
+        <p>
+          Mapa ruchu lotniczego samolotów pasażerskich on-line: <a href=
+          "http://www.flightradar24.com">http://www.flightradar24.com</a>
+        </p>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li class="akt">
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li>
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="index.html">Polski</a>
+          </li>
+          <li>
+            <a href="start-en.htm">English</a>
+          </li>
+        </ul>
+        <p>
+          (C) Grzegorz Podgórski 2000-2011
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

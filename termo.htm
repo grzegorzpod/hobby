@@ -1,0 +1,362 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Description" content=
+    "Monitorowanie temperatury DS18B20, DS1820, DS18S20 na PC: 3 proste programy: Maxitermo, Termo, Minitermo" />
+    <title>
+      Termometr do PC DS18B20 DS18S20 DS1820
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18402278-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    //]]>
+    </script>
+	
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h2>
+          Elektronika, komputer, radio - blog, projekty
+        </h2><a href="https://grzegorzpod.github.io/hobby">https://grzegorzpod.github.io/hobby</a>
+      </div>
+      <div id="nav1">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="start-en.htm"><img alt="English" title="English" src="gb.gif" width="30"
+            height="15" /></a>
+          </li>
+        </ul>
+      </div>
+      <div id="ad2">
+      </div>
+      <div id="body">
+        <h2>
+          Termometr do PC DS18B20 DS18S20 DS1820 
+        </h2>
+        <p>
+          Zaprezentuję 3 programiki pełniące funkcję komputerowych termometrów:
+          <strong>Maxitermo, Termo i MiniTermo</strong>. Wszystkie dane czujek znajdziesz na notach
+          katalogowych ze strony producenta:
+        </p>
+        <ul>
+          <li>DS18B20 - <a href=
+          "http://datasheets.maxim-ic.com/en/ds/DS18B20.pdf">http://datasheets.maxim-ic.com/en/ds/DS18B20.pdf</a>
+          - tańszy i nowocześniejszy
+          </li>
+          <li>DS18S20 - <a href=
+          "http://datasheets.maxim-ic.com/en/ds/DS18S20.pdf">http://datasheets.maxim-ic.com/en/ds/DS18S20.pdf</a>
+          - droższy, odpowiednik niedostępnego już DS1820
+          </li>
+        </ul>
+        <h3>
+          Maxitermo wersja beta 040511 DS18B20 DS18S20 DS1820
+        </h3>
+        <p>
+          Program <a href="download/maxitermo.zip" onclick=
+          "javascript: pageTracker._trackPageview('/maxitermo');">Maxitermo - 700KB</a> umożliwia
+          prezentację i rejestrację temperatur odczytanych dowolnej liczby czujek DS18B20 lub
+          DS18S20 podłączonych do komputera PC przez port szeregowy COM (RS232C) za pomocą
+          adaptera 1-wire DS9097E. Schemat adaptera i sposób podłączenia przedstawiony jest
+          poniżej:
+        </p><img src="ds9097e.gif" alt="Image" />
+        <p></p>
+        <p>
+          Dla wtyku DB9 COM:
+        </p>
+        <ul>
+          <li>GND - pin 5
+          </li>
+          <li>DTR - pin 4
+          </li>
+          <li>RxD - pin 2
+          </li>
+          <li>TxD - pin 3
+          </li>
+        </ul>
+        <p>
+          Różne wykonania tego adaptera wraz ze zdjęciami bez problemu znajdziesz w necie. W
+          przypadku problemów z samodzielnym wykonaniem, możesz go nabyć za niewielką kwotę
+          np. na allegro.
+        </p>
+        <p>
+          Temperatury w programie prezentowane są:
+        </p>
+        <ul>
+          <li>jako kontrolki na layoucie definiowanym przez użytkownika
+          </li>
+          <li>na liście
+          </li>
+          <li>na wykresie historii temperatur
+          </li>
+          <li>w zasobniku systemowym.
+          </li>
+        </ul>
+        <p>
+          Program ponadto umożliwia eksport zarejestrowanych temperatur do plików txt.
+          Przykładowy zrzut ekranu poniżej (program wykorzystany do monitorowania temperatury
+          wewnątrz PC):
+        </p><img src="maxitermo.jpg" alt="Image" />
+        <p></p>
+        <div class="adp">
+        </div>
+        <h4>
+          Pierwsze uruchomienie
+        </h4>
+        <p>
+          Przy pierwszym uruchomieniu należy przejść do zakładki "Ustawienia". Określić:
+        </p>
+        <ul>
+          <li>Port szeregowy do którego podłączony jest adapter,
+          </li>
+          <li>Kolor tła widocznego w zakładce "Layout",
+          </li>
+          <li>Opcjonalnie, zaznaczając "Pokaż obraz na layoucie" wskazać plik obrazu tła -
+          może to być np. rysunek przekroju piętra budynku, schemat instalacji centralnego
+          ogrzewania, wnętrze komputera lub rysunek monitorowanego procesu. Następnie w razie
+          potrzeby określić w % powiększenie obrazu tak aby mieścił się w oknie.
+          </li>
+          <li>Określić okres w minutach między zapisami do bazy. Dla uzyskania czytelnego
+          wykresu dziennego wystarczy zapis co 10 minut. Dla uzyskania czytelnego wykresu
+          miesięcznego wystarczy zapis co 60-120 minut. Podanie wartości 0 spowoduje, że program
+          nie będzie rejestrował temperatur.
+          </li>
+        </ul>
+        <p>
+          Następnie należy nacisnąć przycisk "START". Program cyklicznie skanuje magistralę
+          1-wire i prezentuje znalezione czujki wraz z temperaturami. W celu konfiguracji ustawień
+          indywidualnych dla każdej czujki należy kliknąć prawym przyciskiem myszy na
+          kontrolkę czujki w zakładce "Layout" lub "Lista". W oknie "Właściwości" określić:
+        </p>
+        <ul>
+          <li>położenie, wymiary, kolory czcionki i tła kontrolki,
+          </li>
+          <li>kolory czcionki i tła kontrolki,
+          </li>
+          <li>kolor linii widoczny na wykresie "Historia".
+          </li>
+        </ul>
+        <p>
+          Położenie kontrolek w zakładce "Layout" można określić przesuwając je trzymając
+          lewy przycisk i klawisz Ctrl.
+        </p>
+        <h4>
+          Historia temperatur i eksport danych
+        </h4>
+        <p>
+          Po przejściu do zakładki "Historia" wybrać zakres i nacisnąć "Odśwież" - program
+          naniesie na wykresie przebiegi temperatur dla wszystkich czujek obecnych w podanym
+          przedziale czasowym. Za pomocą przycisku "Zapisz do plików txt" dane dla wybranego
+          zakresu można przenieść do plików txt. Po kliknięciu przycisku należy wskazać
+          folder do którego zostaną zapisane pliki - dla każdej czujki osobny plik.
+        </p>
+        <h3>
+          Termo v. 1.0 DS18B20 DS18S20 DS1820
+        </h3>
+        <p>
+          Program <a href="download/Termo-ds1820-termostat.rar" onclick=
+          "javascript: pageTracker._trackPageview('/termo');">Termo - 277KB</a> służy do pomiaru
+          temperatury za pomocą <strong>jednego</strong> czujnika 1-wire DS1820 / DS18B20 /
+          DS18S20 oraz uproszczonego adaptera DS9097E podłączanego do portu szeregowego PC.
+        </p>
+        <h4>
+          Program umożliwia:
+        </h4>
+        <ul>
+          <li>Wizualizację temperatury
+          </li>
+          <li>Rejestrowanie temperatury w określonym interwale
+          </li>
+          <li>Sterowanie urządzeniem zewnętrznym (za pomocą niewykorzystanej w adapterze linii
+          RTS).
+          </li>
+        </ul><img src="termo.jpg" width="456" height="310" alt="Image" />
+        <h4>
+          Hardware
+        </h4>
+        <h5>
+          Adapter podstawowy DS9097E
+        </h5>
+        <p>
+          Uproszczony schemat adaptera oraz układ wyprowadzeń czujnika znajdują się poniżej:
+        </p><img src="schematds9097e.gif" width="361" height="279" alt="Image" />
+        <p>
+          <a href="szereg_sprzet.htm#wyprowadzenia">Opis wyprowadzeń portu dla DB9 i DB25</a>
+        </p>
+        <p>
+          Wartości elementów nie są krytyczne, jedynie w miejscach D3 i D4 obowiązkowo muszą
+          się znaleźć diody BAT85. Nóżkę DQ czujnika trzeba podłączyć do pinu DATALINE
+          adaptera, natomiast GND i VDD czujnika (tryb Parasite-Power) zewrzeć ze sobą i
+          podłączyć do końcówki RETURN. Z wyjścia RTS można wysterować diodę optotriaka
+          czy tranzystor MOSFET i realizować zamierzone sterowanie (program termo). Roboczo na
+          schemacie rolę elementu wykonawczo-sygnalizacyjnego pełni dioda LED D5 połączona
+          szeregowo z rezystorem R2 - jeśli nie korzystamy z opcji sterowania - oba elementy
+          można pominąć.
+        </p>
+        <h5>
+          Adapter bardziej zaawansowany - funkcjonalnie odpowiednik DS9097E
+        </h5><img src="DS9097E-TR.gif" width="615" height="436" alt="Image" />
+        <div class="adp">
+        </div>
+        <p>
+          <a href="szereg_sprzet.htm#wyprowadzenia">Opis wyprowadzeń portu dla DB9 i DB25</a>
+        </p>
+        <p>
+          Adapter wykonany na 4-rech diodach ma istotną wadę - masa czujnika ma inny potencjał
+          niż masa komputera. Czasami jest to nieporządane np. wtedy gdy chcemy zasilać czujnik
+          przez przewidziane do tego wejście Vdd. Pokazany wyżej adapter nie posiada tej wady, a
+          w niektórych sytuacjach może się sprawować lepiej od adaptera opisanego na wstępie.
+        </p>
+        <p>
+          Wartości elementów nie są krytyczne, w miejsce tranzystorów BS170 można użyć
+          dowolnych N-MOSów (lub nawet BC547 ale wtedy koniecznie z dodatkowym rezystorem 10k w
+          obwodzie bazy).
+        </p>
+        <p>
+          Zwora <strong>ZW</strong> decyduje czy napięcie zasilające adapter ma być pobierane z
+          portu czy też z wejścia/wyjścia <strong>+5V</strong>. W przypadku zwarcia
+          <strong>ZW</strong> końcówka <strong>+5V</strong> jest wyjściem zasilającym czujnik,
+          w przypadku rozwarcia <strong>ZW</strong> końcówka <strong>+5V</strong> jest wejściem
+          zewnętrznego zasilania 5V. Jeśli korzystamy tylko z zewnętrznego zasilania diody
+          1N4148 i zenerki 5V1 można nie montować.
+        </p>
+        <p>
+          Sposób dołączenia czujnika: +5V z Vdd czujnika, DATALINE z DQ czujnika, GND z GND
+          czujnika.
+        </p>
+        <h4>
+          Software
+        </h4>
+        <h5>
+          Omówienie zakładek w programie:
+        </h5>
+        <ul>
+          <li>
+            <strong>Ustawienia</strong> - Służy do określania portu, okresu próbkowania
+            temperatury (min. 1s) oraz sposobu sterowania urządzeniem zewnętrznym. Sterowanie to
+            może być realizowane w 3 trybach: Tryb <strong>alarm</strong> załącza stan wysoki
+            na linii RTS, gdy temperatura wykracza poza przedział TL&gt;temp&gt;TH; tryb
+            <strong>grzanie</strong> załącza stan wysoki na RTS, gdy temperatura spadnie poniżej
+            TL, a wyłącza gdy temperatura przekroczy TH, w przypadku trybu
+            <strong>chłodzenie</strong> jest odwrotnie.
+          </li>
+          <li>
+            <strong>Log Tekstowy</strong> - Daje informacje o wartościach kolejnych próbek
+            temperatury w formie logu.
+          </li>
+          <li>
+            <strong>Wykres</strong> - Jak wyżej, ale w formie wykresu.
+          </li>
+          <li>
+            <strong>Termometr</strong> - Podaje aktualną wartość temperatury liczbowo i
+            graficznie.
+          </li>
+          <li>
+            <strong>O programie</strong> - Informacje o programie.
+          </li>
+        </ul>
+        <p>
+          Warto dodać, że termostat czysto sprzętowy można zrealizować np. na DS1821 [<a href=
+          "termostat_ds1821.htm">Więcej</a>]
+        </p>
+        <h3>
+          MiniTermo v. 0.9 DS18B20 DS18S20 DS1820
+        </h3>
+        <p>
+          Program <a href="download/minitermo.zip" onclick=
+          "javascript: pageTracker._trackPageview('/minitermo');">MiniTermo-198KB</a> jest
+          uproszczoną wersją termometru opisanego wyżej. Nie rejestruje temperatury, nie steruje
+          urządzeniem zewnętrznym, ale w zamian udostępnia ją w systemowym trayu obok zegarka,
+          w windowsowym okienku oraz przez DDE. Dzięki temu ostatniemu możliwy jest dostęp do
+          temperatury z programów wyposażonych w DDE takich jak LabView, czy choćby MS-Excel.
+          Połączenie DDE można przetestować wpisując w arkuszu MS-Excel następującą
+          formułę:
+        </p>
+        <pre>
+=MINITERMO|MINITERMO!SENSOR
+</pre><img src="minitermo-excel.JPG" width="385" height="153" alt="Image" />
+        <p>
+          w razie problemów zerknij do pomocy wpisując hasło DDE.
+        </p>
+        <h3>
+          Podsumowanie
+        </h3>
+        <ul>
+          <li>Wszystkie programy są udostępniane na zasadach Freeware,
+          </li>
+          <li>Brakuje ci wolnego portu COM:
+            <ul>
+              <li>Sprawdź w instrukcji płyty głównej czy ma gniazdo COM - jeśli tak podłącz
+              do płyty "śledzia COM",
+              </li>
+              <li>Zainstaluj kartę PCI / PCMCIA zawierającą porty COM,
+              </li>
+              <li>Podłącz przejściówkę USB-COM. Uwaga: Ze względu różne wykonania takich
+              przejściówek (napięcia, chipsety) nie ma gwarancji, że zadziała.
+              </li>
+            </ul>
+          </li>
+          <li>W programie Termo i Minitermo do adaptera może być dołączony <strong>tylko
+          jeden</strong> czujnik DS18B20 / DS18S20,
+          </li>
+          <li>Programy mogą nie działać poprawnie z na komputerach z niskimi napięciami RS232C
+          np. na niektórych laptopach
+          </li>
+          <li>Programów Termo i Minitermo, nie przewiduję już dalej rozwijać. Będę natomiast
+          rozwijał program Maxitermo. Przewiduję dodanie funkcji sterowania wyjściami, oraz
+          obsługę sieci, pozwalającą na odległy monitoring temperatur lub ich prezentację w
+          internecie.
+          </li>
+        </ul>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="index.html">Polski</a>
+          </li>
+          <li>
+            <a href="start-en.htm">English</a>
+          </li>
+        </ul>
+        <p>
+          (C) Grzegorz Podgórski 2000-2011
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,307 @@
+div.ramka {
+  margin: 10px 30px;
+  padding: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  display: inline-block;
+}
+
+li.akt {
+  font-weight: bold;    
+}
+
+div.adp {
+  margin: 0px;
+  padding: 10px 0px; 
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+#container
+{
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px #888888;
+  margin: 10px;
+  padding: 0px;
+  width: 930px;  
+}
+
+#header {
+  margin: 0px;
+  padding: 0px;
+  height: 120px;
+  font-family: Arial,Helvetica,sans-serif;
+  background-image:url('baner.jpg');
+  background-repeat:repeat-x;
+  background-position: right top;
+  background-color: #336699;
+}
+
+#header h2{
+  margin: 0px;
+  padding: 5px 10px;
+  text-shadow: 2px 2px black;
+  font-weight: bold;
+  color: white;
+  font-size: 36px;
+  background-color: rgba(51, 102, 153, 0.3); 
+}
+
+#header p
+{
+  margin: 0px;
+  padding: 0px;
+}
+
+#header a {
+  background-color: rgba(51, 102, 153, 0.6);
+  font-size: 20px;
+  text-shadow: 1px 1px black;
+  font-style: italic;
+  margin: 21px 100px 0px 0px;
+  padding: 10px 10px;
+  display: inline-block;
+}
+
+#header a:link {
+  color: white;
+  text-decoration: none;
+}
+#header a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+#header a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+#header a:active {
+  color: red;
+  text-decoration: underline;
+}
+
+#nav1 {
+  padding-top: 0px;
+  border-bottom-style: inset;
+  height: 30px;
+  background-color: #336699;
+  display: block;
+  border-bottom-width: 2px;
+  display: block; 
+  font-size: 16px;
+  font-family: Arial,Helvetica,sans-serif;
+  font-weight: normal;
+}
+
+#nav1 ul /*, ul li  */ {
+  list-style-type: none;
+  list-style-image: none;
+  list-style-position: outside;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+}
+
+#nav1 li {
+  padding-top: 5px;
+  padding-left: 25px;
+  float: left;
+}
+#nav1 a:link {
+  color: white;
+  text-decoration: none;
+}
+
+#nav1 a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+#nav1 a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+#nav1 a:active {
+  color: red;
+  text-decoration: underline;
+}
+
+#nav1 img{
+  border: 1px;
+  border-color: black;
+  border-bottom-style:solid;
+  border-right-style:solid; 
+}
+
+#nav1 p{
+  margin: 0px;
+  padding: 5px 0px;
+}
+
+#body {
+  float: left;
+  overflow: hidden;
+  margin: 0px;
+  padding: 15px;
+  width: 760px;
+  background-color: #ffffff;
+  border-right-width: 1px;
+  font-size: 12px;
+  font-family: Arial;
+  color: black;
+  line-height: 200%;
+}
+
+#body table {
+  font-size: 12px;
+  font-family: Arial;
+  margin: 10px;
+  border-collapse:collapse;
+  box-shadow: 2px 2px 2px #888888;   
+  line-height: 200%;
+}
+
+#body table tr, table td, table th{
+  margin: 0px;
+  padding: 10px;
+  border-width: 1px;
+  border-color: #888888;
+  border-style: solid;  
+}
+
+#body img {
+  box-shadow: 2px 2px 2px #888888;
+  border: 1px solid #888888;
+}
+
+#body a{
+  margin: 0px;
+  padding: 0px;
+  font-weight: bold;
+}
+
+#body a:link {
+  color: #0000FF;
+  text-decoration: none;
+}
+
+#body a:visited {
+  color: #000066;
+  text-decoration: none;
+}
+
+#body a:hover {
+  color: #0000FF;
+  text-decoration: underline;
+}
+
+#body a:active {
+  color: red; 
+  text-decoration: underline;
+}
+
+#body h2{
+  font-size: 24px;
+  margin: 10px 0px;
+  padding: 5px 20px;
+  border-bottom: solid #888888 2px;
+  color: #000066;
+}
+
+#body h3{
+  font-size: 24px;
+}
+
+#body h3{
+  font-size: 18px;
+}
+
+#body h4{
+  font-size: 14px;
+}
+
+#body h5{
+  font-size: 12px;
+}
+
+
+#body ul {
+  list-style-type: circle;  
+  padding-left: 50px;
+}
+#body li {
+  list-style-type: circle;  
+  padding: 5px;
+  margin: 0px;
+}
+#body p {
+  text-align: justify;
+  text-indent: 30px; 
+}
+
+#footer {
+  width: 100%;
+  height: 30px;
+  clear: both;
+  background-color: #888888;
+  color: black;
+  font-size: 12px;  
+  font-family: Arial,Helvetica,sans-serif;
+}
+#footer p {
+  padding: 6px 150px 6px 0px;
+  text-align: right;
+}
+
+#footer ul, li {
+  list-style-type: none;
+  list-style-image: none;
+  list-style-position: outside;
+  text-align: left;
+}
+
+#footer li {
+  margin: 6px -1px;
+  padding: 0px 10px;
+  float: left;
+  border-right-width: 1px;
+  border-right-color: black;
+  border-right-style: solid;
+}
+
+#footer a:link {
+  color: white;
+  text-decoration: none;
+}
+#footer a:visited {
+  color: white;
+  text-decoration: none;
+}
+#footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+#footer a:active {
+  color: red;
+  text-decoration: underline;
+}
+
+
+#ad2 {
+  overflow: hidden;
+  float: right;
+  margin: 0px;
+  padding: 0px;
+  width: 120px;  
+  border-width: 0px;
+}
+

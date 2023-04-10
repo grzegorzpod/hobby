@@ -1,0 +1,176 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Description" content=
+    "Program I2CTEST i prosta przystawka do testowania magistrali I2C TWI" />
+    <title>
+      PC jako master w magistrali I2C
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18402278-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    //]]>
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h2>
+          Elektronika, komputer, radio - blog, projekty
+        </h2><a href="https://grzegorzpod.github.io/hobby">https://grzegorzpod.github.io/hobby</a>
+      </div>
+      <div id="nav1">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="start-en.htm"><img alt="English" title="English" src="gb.gif" width="30"
+            height="15" /></a>
+          </li>
+        </ul>
+      </div>
+      <div id="ad2">
+      </div>
+      <div id="body">
+        <h2>
+          PC jako master w magistrali I2C 
+        </h2>
+        <p>
+          Pod magistralę I2C jest dostępna mnogość scalaków: sensorów temperatury,
+          przetworników AD / DA, sterowników wyświetlaczy, ekspanderów i wielu innych. Ażby
+          się chciało to wszystko podłączyć do PC i się pobawić ;). Na niniejszej stronie
+          zaprezentuję prostą przystawkę mojej konstrukcji, dzięki której komputer PC staje
+          się urządzeniem master w magistrali I2C. Przystawka korzysta z portu szeregowego.
+          Schemat poniżej:
+        </p><img src="i2cadapt.GIF" width="270" height="314" alt="Image" />
+        <div class="adp">
+        </div>
+        <p>
+          Całość można spokojnie zmontować metodą "pająka" i zapakować w obudowę DB9.
+          Układ był testowany z ekspanderem PCF8574 i czujnikiem temperatury TMP100 - żadnych
+          nieprawidłowości wynikających z drobnych niezgodności ze specyfikacją I2C nie
+          stwierdziłem. Zasilanie podłączanych układów można pociągnąć również z portu -
+          tu z linii TxD, na której programowo jest wystawiony stan wysoki. To tyle o przystawce.
+          Teraz czas na oprogramowanie.
+        </p>
+        <h3>
+          I2CTEST -Tester magistrali I2C v1.1
+        </h3>
+        <h4>
+          Nowości względem poprzedniej wersji
+        </h4>
+        <ul>
+          <li>definiowany przez użytkownika czas impulsu na SCL;
+          </li>
+          <li>możliwość przystosowania programu do współpracy z innymi przystawkami.
+          </li>
+        </ul>
+        <p>
+          <a href="download/i2ctest.zip" onclick=
+          "javascript: pageTracker._trackPageview('/i2ctest');">I2CTEST - 211KB</a> współpracuje
+          z opisywaną przystawką. Umożliwia: wykrycie obecności urządzeń - podaje ich adresy
+          (zakładka skaner). Oprócz tego możliwe jest próbne zrealizowanie komunikacji z
+          urządzeniem slave (zakładka tester).
+        </p><img src="i2ctest.jpg" width="382" height="300" alt="Image" />
+        <div class="adp">
+        </div>
+        <h4>
+          Omówienie zakładek:
+        </h4>
+        <ul>
+          <li>
+            <strong>Ustawienia -</strong> wybór portu, do którego podłączona jest przystawka;
+          </li>
+          <li>
+            <strong>Skaner</strong> - skaner magistrali - po wybraniu przycisku "start" program
+            wysyła na magistralę sygnał "start" i kolejny adres od 0 do 255 - jeśli otrzyma
+            odpowiedź (ACK) wyświetla adres. Dodatkowo dla adresów nieparzystych, które
+            zazwyczaj służą do odczytywania danych, odczytuje jeden bajt;
+          </li>
+          <li>
+            <strong>Tester -</strong> umożliwia próbne zrealizowanie komunikacji z urządzeniem
+            przy pomocy poleceń, które są kolejno wykonywane po wybraniu przycisku "start".
+            Polecenia i ich parametry trzeba określić w tabeli - pierwsza kolumna zawiera
+            polecenia, druga wartość do wysłania (przez write) lub odebraną (przez read),
+            trzecia komentarz. Dostępne polecenia sterujące magistralą: <strong>start, stop,
+            restart, read, write</strong>.Inne polecenia i zbędne parametry są ignorowane.
+            Parametr (bajt) jest obowiązkowy tylko dla polecenia <strong>write</strong>
+            zapisującego bajt do magistrali. Polecenie <strong>read</strong> czyta bajt z
+            magistrali i zapisuje w kolumnie obok. Uwaga: polecenie <strong>read</strong> wysyła
+            sygnał ACK natomiast <strong>write</strong> informuje tylko o jego braku.
+          </li>
+        </ul>
+        <h4>
+          Współpraca programu z innymi przystawkami
+        </h4>
+        <p>
+          Jest możliwa pod warunkiem, że korzystają z linii portu szeregowego. W tym przypadku
+          należy poddać edycji plik i2c.ini:
+        </p>
+        <pre>
+[I2C]
+SDALOW=CLRDTR 
+SDAHIGH=SETDTR
+SCLLOW=CLRRTS
+SCLHIGH=SETRTS
+SDAWe=DSR      ; do wyboru jest tylko DSR i CTS
+SDANeg=false   ; negowanie wejscia
+POWERON=SETTXD ; zasilanie
+
+[PORT]
+port=com2
+TimeSCL=10
+</pre>
+        <h5>
+          Uwaga: program nie jest odporny na błędne definicje.
+        </h5>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="index.html">Polski</a>
+          </li>
+          <li>
+            <a href="start-en.htm">English</a>
+          </li>
+        </ul>
+        <p>
+          (C) Grzegorz Podgórski 2000-2011
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Description" content=
+    "Łaczenie PC przez port szeregowy COM - Norton Commander, Hyperterminal, Term95, DOS, Windows." />
+    <title>
+      Porty w PC - oprogramowanie
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18402278-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    //]]>
+    </script>
+	
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h2>
+          Elektronika, komputer, radio - blog, projekty
+        </h2><a href="https://grzegorzpod.github.io/hobby">https://grzegorzpod.github.io/hobby</a>
+      </div>
+      <div id="nav1">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="start-en.htm"><img alt="English" title="English" src="gb.gif" width="30"
+            height="15" /></a>
+          </li>
+        </ul>
+      </div>
+      <div id="ad2">
+      </div>
+      <div id="body">
+        <h2>
+          Porty w PC - oprogramowanie 
+        </h2>
+        <h3>
+          Łączenie komputerów kablem szeregowym i równoległym - konfiguracja oprogramowania
+        </h3>
+        <ul>
+          <li>
+            <a href="#norton">Norton Commander</a>
+          </li>
+          <li>
+            <a href="#intersvr">InterLnk i InterSvr z MS-DOSa 6.22</a>
+          </li>
+          <li>
+            <a href="#terminale">Programy terminalowe</a> - znajdziesz je w każdym systemie
+            począwszy od DOS, skończywszy na XP
+          </li>
+          <li>
+            <a href="#klawiszeszeregowe">Klawisze szeregowe</a> - ciekawa opcja w win2000/XP
+          </li>
+          <li>
+            <a href="#dos">Polecenia DOSa</a>
+          </li>
+          <li>
+            <a href="#uwagi">Ustawienia portu</a>
+          </li>
+          <li>
+            <a href="#inne">Piszemy program w QBasicu</a>
+          </li>
+          <li>
+            <a href="#lpt">Port równoległy (LPT)</a>
+          </li>
+        </ul>
+        <p>
+          Mam złą wiadomość dla użytkowników <strong>win2000/XP</strong> - DOSowe programy
+          takie jak Norton Commander czy InterLnk nie będą poprawnie pracować w tych systemach.
+          Jeśli chcesz połączyć komputer pracujący pod DOSem z kompem z win2000/XP, masz do
+          dyspozycji jedynie terminale i "Bezpośrednie Połączenie Kablowe". Jedynym znanym mi
+          programem umożliwiającym prostą wymianę plików pod Windowsami jest <strong>Windows
+          Commander</strong>. Jeśli jego prostota okaże się niewystarczająca proponuję
+          zestawić <strong>Bezpośrednie połączenie kablowe</strong> i skorzystać z opcji
+          udostępniania plików.
+        </p>
+        <h3>
+          <a name="norton" id="norton"></a>Norton Commander (prawdopodobnie od wersji 3.0):
+        </h3>
+        <p>
+          Umożliwia dostęp do zasobów dyskowych drugiego komputera. Można skopiować
+          przenieść lub usunąć dowolny plik/katalog. Widoczne są wszystkie dyski komputera
+          pracującego w trybie biernym. Odpalanie wygląda tak:
+        </p>
+        <p>
+          Na obu komputerach wybieramy opcję połącz:
+        </p><img src="nc2.gif" width="492" height="231" alt="Image" />
+        <div class="adp">
+        </div>
+        <p>
+          Informujemy komputer, do którego portu podłączony jest kabel. Wybieramy tryb pracy (na
+          jednym komputerze aktywny,na drugim bierny):
+        </p><img src="nc3.gif" width="492" height="231" alt="Image" />
+        <p>
+          Pojawia się okienko informujące o oczekiwaniu na połączenie...
+        </p>
+        <p>
+          A po nim:
+        </p>
+        <p>
+          Na komputerze "aktywny":
+        </p><img src="nc4.gif" width="492" height="231" alt="Image" />
+        <p>
+          Na komputerze "bierny":
+        </p><img src="nc1.gif" width="492" height="231" alt="Image" />
+        <p>
+          Jeśli po oczekiwaniu na połączenie pojawi komunikat:
+        </p><img src="ncerr.gif" width="194" height="50" alt="Image" />
+        <p>
+          ...wtedy trzeba sprawdzić kable, zresetować komputer, wypróbować inne porty (do
+          wyboru mamy zazwyczaj 2), przetestować wszystkie warianty, sprawdzić przy pomocy np.
+          starej myszki działanie portów, sprawdzić poprawność połączeń śledzia z kartą
+          I/O (albo płytą główną), zobaczyć co na temat COMów ma do powiedzenia jakiś
+          program diagnostyczny np. MSD itd. Co prawda NC jakoś działa pod WINdą, ale zalecam
+          uruchamianie go pod DOSem - w czasie startu systemu: F8 i "wiersz poleceń" (w przypadku
+          takich programów jak NC WINda ma swoje kaprysy i nie zawsze pozwala się dobrać im do
+          COMów).
+        </p>
+        <h3>
+          <a name="intersvr" id="intersvr"></a>INTERLNK i INTERSVR z MS-DOSa 6.xx
+        </h3>
+        <p>
+          Umożliwia swobodny dostęp do dysków i drukarek komputera - serwera pracującego w
+          trybie biernym z poziomu komputera klienta z zainstalowanym sterownikiem.
+        </p>
+        <p>
+          Na komputerze-serwerze odpalamy program INTERSVR (uwaga: nie da się go uruchomić pod
+          WINdą, jedyne co można zrobić to nacisnąć przy starcie systemu F8 i wybrać "wiersz
+          poleceń") Na komputerze-kliencie dodajemy do pliku CONFIG.SYS linijkę:
+        </p>
+        <pre>
+DEVICE=C:\DOS\INTERLNK.EXE
+</pre>
+        <p>
+          gdzie C:\DOS to lokalizacja (ścieżka dostępu) do pliku INTERLNK.EXE. Następnie
+          restartujemy komputer.
+        </p>
+        <p>
+          Po restarcie klient i serwer same się odnajdą (oba programy skanują wszystkie porty).
+          Na komputerze-kliencie pojawią się nowe dyski (udostępniane przez serwer), do których
+          bedzie możliwy dostęp także pod WINDOWSem (ale troche wolny).
+        </p>
+        <h3>
+          <a name="terminale" id="terminale"></a>Programy terminalowe np. HyperTerminal z WINdy
+          albo Term95 z NC
+        </h3>
+        <p>
+          Umożliwiają przesyłanie tekstów (np. prymitywne "czatowanie") i plików - wtedy
+          odpalamy terminale na obu komputerach. Dzięki nim możliwa jest także praca zdalna,
+          odbieranie i wysyłanie danych tekstowych z/do programów pracujących na drugim
+          komputerze - wtedy na jednym komputerze odpalamy terminal a na drugim wydajemy spacjalna
+          komendę z linii poleceń DOSa/WINdy - o tym za chwilę. Konfiguracja HyperTerminala
+          wygląda tak:
+        </p>
+        <p>
+          Odpalamy skrót do folderu HyperTerminal:
+          start/programy/akcesoria/komunikacja/HyperTerminal, a następnie program HyperTrm.
+          Wpsujemy nazwę połączenia i wybieramy mu ikonkę.
+        </p><img src="hyper1.gif" width="332" height="292" alt="Image" />
+        <div class="adp">
+        </div>
+        <p>
+          Wybieramy port (do którego podłączony jest kabel) na liście "połącz używając":
+        </p><img src="hyper2.gif" width="296" height="293" alt="Image" />
+        <p>
+          Ustalamy parametry transmisji: prędkość wg. uznania (np. do pracy zdalnej pod DOSem
+          max 9600), bity danych 8, brak parzystości i bity stopu 1. Sterowanie przepływem w
+          przypadku 3-żyłowego kabla nie może być ustawione na sprzęt lub RTS/CTS (term95) -
+          wysyłanie/odbiór nie będzie wtedy możliwy.
+        </p><img src="hyper3.gif" width="412" height="401" alt="Image" />
+        <p>
+          Rezultat końcowy: na drugim komputerze w linii poleceń została wydana
+          komenda:<strong>ver &gt; com2</strong>
+        </p><img height="234" src="hyper4.gif" width="368" alt="Image" />
+        <p>
+          W programie Term95 z Nortona Commandera sprawa wygląda podobnie. Uruchamiamy program
+          komendą: <strong>term95</strong> lub w NC naciskamy kolejno:F9,o,t. Przechodzimy do menu
+          "Ustawienia" i wybieramy opcję "Łącze". Można to zrobić myszką lub sekwencją
+          Alt+P. Ustawiamy parametry transmisji.
+        </p><img src="term951.gif" width="492" height="231" alt="Image" />
+        <h4>
+          Rezultat końcowy:
+        </h4><img src="term952.gif" width="492" height="231" alt="Image" />
+        <p>
+          Tu akurat zachciało mi się pokazać jak sformatować dyskietkę umieszczoną w stacji
+          5,25" mojego starego kochanego 386SX, wydając komendę <strong>format a:</strong> na
+          terminalu odpalonym na moim nowym nabytku. Aby to było możliwe, wcześniej na swojej
+          386tce musiałem wydać komendę <strong>ctty com2</strong>.
+        </p>
+        <h4>
+          Warto wiedzieć:
+        </h4>
+        <ul>
+          <li>Jeśli przy wymianie plików mamy do dyspozycji klika protokołów - zalecam wybór
+          <strong>zmodem</strong>.
+          </li>
+          <li>Jeśli program rozróżnia pliki binarne i tekstowe to bezpieczniejsze jest
+          wysyłanie tekstowych jako binarne
+          </li>
+          <li>Programy terminalowe umożliwiają wymianę plików między różnymi systemami,
+          korzystając z protokołu zmodem można wysłać/otrzymać plik ze swojego konta na
+          serwerze linuxowym. Do przysłania sobie pliku z serwera służy dwuliterowa komenda,
+          której nie pamiętam ;) - (chyba rz czy jakoś tak - musisz sprawdzić)
+          </li>
+        </ul>
+        <h3>
+          <a name="klawiszeszeregowe" id="klawiszeszeregowe"></a>Klawisze szeregowe
+        </h3>
+        <p>
+          W Windowsie 2000/XP, a być może i w starszych jest dostępna opcja <strong>Klawisze
+          szeregowe.</strong> Po jej uaktywnieniu znaki odbierane z wskazanego w ustawieniach portu
+          szeregowego są traktowane równoznacznie z odpowiadającymi im klawiszom na klawiaturze,
+          a więc wysyłanie znaków do portu przy pomocy podłączonego terminala (którym może
+          być np. odbiornik IR połączony z mikrokontrolerem tłumaczącym sygnały IR na znaki)
+          daje taki sam efekt jak naciskanie klawiszy na lokalnej klawiaturze. Opcję włączamy
+          przechodząc kolejno: Panel sterowania &gt; Opcje ułatwień dostępu &gt; Ogólne
+        </p><img border="0" src="klawiszeszeregowe.jpg" width="433" height="466" alt="Image" />
+        <p>
+          zaznaczamy opcję "Obsluga urządzeń funkcji KlawszeSzeregowe" i wchodzimy w ustawienia
+          celem określenia portu i prędkości. Aby poznać możliwości tej opcji proponuję
+          uruchomić notatnik i wysłać coś do portu np. plik tekstowy - odbierane znaki będą
+          "wklejane" do notatnika.
+        </p>
+        <h3>
+          <a name="dos" id="dos"></a>COMy a wiersz poleceń DOSa/WINdy
+        </h3>
+        <p>
+          Urządzenie o nazwie COMn, gdzie n to numer portu (1..4), traktujemy jak nazwę pliku.
+          Przykładowe komendy wydawane w wierszu poleceń:
+        </p>
+        <ul>
+          <li>
+            <strong>copy plik com1</strong> skopiowanie (wysłanie pliku do portu com1)
+          </li>
+          <li>
+            <strong>dir &gt; com2</strong> wysłanie listy plików do portu com2. Jeśli na drugim
+            komputerze zostanie odpalony terminal to na jego screenie wyświetli się lista.
+            Zamiast <strong>dir</strong> może być użyte każde inne polecenie dosowe
+            wyświetlające znaki na ekranie np. ver, tree, type itd.
+          </li>
+        </ul>
+        <p>
+          Na uwagę zasługuje polecenie <strong>ctty</strong> umożliwiające zmianę konsoli z
+          urządzenia CON (klawiatura przy pisaniu, monitor przy czytaniu) na inne urządzenie
+          systemowe np. port szeregowy COMn, czyli zdalną pracę. Aby zdalnie popracować na
+          odległym komputerze trzeba w wierszu poleceń wydać komendę <strong>ctty com</strong>n
+          (n-numer portu), a na swoim odpalić terminal. Przykład takiej pracy był wcześniej. Na
+          koniec ważna uwaga: parametry portu, do którego będziemy wysyłać dane poleceniami
+          DOSu ustala się komendą <strong>mode</strong>. np. <strong>mode
+          com2:9600,n,8,1,p.</strong> ustala prędkość transmisji portu na 9600bps. Można ją
+          np. umieścić w pliku autoexec.bat .
+        </p>
+        <h3>
+          <a name="uwagi" id="uwagi"></a>Ustawienia portu
+        </h3>
+        <p>
+          Przyjęto pewien standard jeśli chodzi o parametry transmisji przez COMy, którego
+          trzeba sie trzymać:
+        </p>
+        <ul>
+          <li>dopuszczalne wartości predkości:
+          <strong>300,600,1200,2400,9600,19200,38400,57600,115200</strong>
+          </li>
+          <li>bity danych:<strong>8</strong>
+          </li>
+          <li>bity stopu:<strong>1</strong>
+          </li>
+          <li>kontrola parzystości:<strong>brak</strong>
+          </li>
+        </ul>
+        <h3>
+          <a name="inne" id="inne"></a>Piszemy program w QBasicu
+        </h3>
+        <p>
+          <strong>Jak napisać program do "czatowania"?</strong> 
+        </p>
+        <p>
+          Być może kiedyś znajdzie się tu kurs programowania portów szeregowych pod DOS, a
+          tymczasem zamieszczam dwie wersje prostego programu do czatowania przez RS232C w
+          <strong>QBasicu</strong>:
+        </p>
+        <pre>
+adr = &amp;H3F8 'com1predkosc = 1200
+'ustalenie parametrow transmisji
+OUT adr + 3, INP(adr + 3) OR 128
+OUT adr + 1, (115200 / predkosc) / 256 'predkosc
+OUT adr, (115200 / predkosc) AND 255
+OUT adr + 3, INP(adr + 3) AND NOT 128 'N,8,1
+OUT adr + 3, 3 OR 0 OR 0
+
+OUT adr + 4, 3 'DTR i RTS="1"- niektore programy tego wymagaja
+
+PRINT : PRINT
+DO
+IF INP(adr + 5) AND 1 THEN COLOR 14: PRINT CHR$(INP(adr)); 'wyswietl co przyszlo
+i$ = INKEY$ 'czy cos wcisniete?
+IF i$ = CHR$(27) THEN OUT adr + 4, 0: END 'ESC - koniec
+IF LEN(i$) = 1 THEN 'jesli inny znak ASCII - wyslij
+COLOR 15: PRINT i$;
+DO: LOOP UNTIL INP(adr + 5) AND &amp;H20 'czekaj az sie zwolni buf
+OUT adr, ASC(i$) 'wyslij
+END IF
+LOOP
+</pre>
+        <p>
+          <strong>Albo inaczej:</strong> tym razem korzystając z funkcji I/O i komunikacji
+          asynchronicznej wbudowanych w Qbasic:
+        </p>
+        <pre>
+numerCOM% = 2
+bpsCOM% = 1200
+
+nazwa$ = "COM" + LTRIM$(STR$(numerCOM%)) + ":" + LTRIM$(STR$(bpsCOM%)) + ",N,8,1,CD0,CS0,DS0,OP0,RS,TB2048,RB2048"
+'wyjasnienie w/w stringa w Helpie do QBasica, patrz: "OPEN COM"
+
+OPEN nazwa$ FOR RANDOM AS #1
+COM(numerCOM%) ON 'Wlaczenie obslugi zdarzen
+ON COM(numerCOM%) GOSUB ComHandler 'Pojawienie sie znaku powoduje skok do ComHandler
+
+DO
+c$ = INKEY$
+IF c$ &lt;&gt; "" THEN COLOR 2: PRINT c$; : PRINT #1, c$; 'wysyla znak i wysw. na ekranie
+LOOP UNTIL c$ = CHR$(27) 'ESC konczy dzialanie progr.
+
+COM(numerCOM%) OFF
+CLOSE #1
+END
+
+ComHandler: 'wyswietla znak, ktory przypelzl do COMa
+COLOR 10
+PRINT INPUT$(1, #1);
+RETURN
+</pre>
+        <p>
+          Jak widać na przykładzie, polecenia takie jak PRINT, czy INPUT stosowane do obsługi
+          plików i klawiatury / monitora, można także zastosować do obsługi portu szeregowego.
+        </p>
+        <h3>
+          Gry:
+        </h3>
+        <p>
+          Osobiście sprawdzałem tylko DOOM2 - działał na 3-żyłowym kablu przy prędkości
+          19200 (minimalna 9600) , podobnie powinno być z większością gier. Wszystko co działa
+          przez zwykły modem powinno działać przez null-modem, a jeśli wymagają sieci to
+          można ją postawić w oparciu o kabel szeregowy lub równoległy (<strong>Bezpośrednie
+          połączenie kablowe</strong> w Windowsie).
+        </p>
+        <h3>
+          <a name="lpt" id="lpt"></a>Słówko o porcie równoległym
+        </h3>
+        <p>
+          Jego wykorzystanie w komunikacji warto rozważyć ze względu na kilkakrotnie większy
+          transfer niż w przypadku portu szeregowego. Dzieje się tak dzięki temu, że dane są
+          wysyłane w 4-bitowych porcjach. W przeciwieństwie do łącza szeregowego, łącze
+          równoległe obciąża procesor w 100% ponieważ cały protokół komunikacyjny jest
+          realizowany programowo. Dlatego nie polecam łącza równoległego w systemach
+          wielozadaniowych jak Windows. Liczba programów potrafiących korzystać z portu
+          równoległego nie jest aż tak liczna. Część z nich była wymieniona wyżej. Poniżej
+          zamieszczam schemat kabelka, z którego korzystają wszystkie znane mi programy łącznie
+          ze sterownikami do PLIPa (Paralell Line IP).
+        </p>
+        <pre>
+    D0-&gt;ERROR       2 - 15          15 - 2
+    D1-&gt;SLCT 3 - 13          13 - 3
+    D2-&gt;PAPOUT       4 - 12          12 - 4
+    D3-&gt;ACK  5 - 10          10 - 5
+    D4-&gt;BUSY 6 - 11          11 - 6
+    SLCTIN      17 - 17
+    GROUND      25 - 25
+Pozostałych pinów nie łączyć!
+</pre>
+        <p>
+          Kabelek taki można kupić w sklepie albo na giełdzie, a na upartego zrobić samemu.
+        </p>
+        <p>
+          Powyższy opis i uwagi dotyczą połączenia w trybie SPP. Warto dodać, że istnieją
+          rozwiązania wykorzystujące port równoległy w trybie ECP z DMA, nieobciążające
+          procesora i zapewniające transfer rzędu 700KB/s. Kabel łączący jest jednak trochę
+          bardziej skomplikowany, a oprogramowania jest mniej.
+        </p>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="index.html">Polski</a>
+          </li>
+          <li>
+            <a href="start-en.htm">English</a>
+          </li>
+        </ul>
+        <p>
+          (C) Grzegorz Podgórski 2000-2011
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

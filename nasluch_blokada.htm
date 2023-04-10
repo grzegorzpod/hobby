@@ -1,0 +1,159 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>
+      Przeróbki: blokada, sterowanie, transmisja
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18402278-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    //]]>
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h2>
+          Elektronika, komputer, radio - blog, projekty
+        </h2><a href="https://grzegorzpod.github.io/hobby">https://grzegorzpod.github.io/hobby</a>
+      </div>
+      <div id="nav1">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li class="akt">
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li>
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="start-en.htm"><img alt="English" title="English" src="gb.gif" width="30"
+            height="15" /></a>
+          </li>
+        </ul>
+      </div>
+      <div id="ad2">
+      </div>
+      <div id="body">
+        <h2>
+          Przeróbki: blokada, sterowanie, transmisja 
+        </h2>
+        <p>
+          Po przestrojeniu radia (czy podłączeniu konwertera) przydatnym dodatkiem może się
+          okazać wskaźnik siły sygnału, blokada szumów, sterowanie silnikiem magnetofonu
+          podłączanego do radia (jeśli nie mamy ochoty siedzieć przy radiu do rana, a obiekt
+          odzywa się raz na godzinę lub rzadziej możemy podpiąć do radia magnetofon ustawiony
+          na nagrywanie i załączać jego silnik przy pojawieniu się nośnej). Inne zastosowania
+          takiego układu to zdalne sterowanie (włącz / wyłącz) i odbiór danych cyfrowych (u
+          mnie do 300bps). Oto jak tego dokonać:
+        </p>
+        <p>
+          W detektorze FM znajdują się dwie diody (AAP153) każda z nich jednym końcem łączy
+          się z uzwojeniem ostatniego filtru p.cz, drugim natomiast z jakimś niewielkim
+          rezystorem. Na drugim wyprowadzeniu tego rezystora pojawia się napięcie 0 do ok. 1000
+          mV, zależne od amplitudy odbieranej nośnej, które można wykorzystać do sterowania
+          "S-metrem" albo blokadą szumów. Wykorzystując ten przypadkiem zauważony fakt
+          zbudowałem takie coś:
+        </p><img src="blokadas.gif" width="544" height="250" alt="Image" />
+        <p>
+          Wejście łączymy z wspomnianym punktem w radioodbiorniku. Rezystor R1 ogranicza dopływ
+          zakłóceń w.cz (tzw. "Wolne Europy") do detektora FM i bloku pośredniej
+          częstotliwości. Wzmacniacz LM358 pracuje jako komparator. Gdy napięcie na wejściu "+"
+          jest większe od napięcia na wejściu "-" na wyjściu pojawia się napięcie bliskie
+          zasilającemu. Prąd na wyjściu steruje tranzystorami Q1 i Q2. Pierwszy dostarcza
+          napięcia zasilającego silnik (lub cały magnetofon). Drugi załącza głośnik do
+          wzmacniacza m.cz - przewód idący od głośnika do masy trzeba podpiąć pod kolektor
+          Q2. Jeśli nie wykorzystujemy drugiego wzmacniacza wchodzącego w skład LM358
+          wyprowadzenia "5" i "6" trzeba połączyć z masą (na upartego można by go wykorzystać
+          do sterowania "s-metrem" budując na nim układ mnożący napięcie wejściowe). C1
+          zapobiega załączaniu głośnika przez przypadkowe zakłócenia typu "szpilkowego". R3 w
+          razie potrzeby można trochę zmniejszyć. Potencjometrem PR1 ustalamy próg sygnału
+          (napięcie na wejściu "-"), powyżej którego jest załączany głośnik i cała reszta.
+        </p>
+        <p>
+          Wspominałem o wykorzystaniu układu do <strong>odbioru danych cyfrowych</strong>.
+          Głównym założeniem układu było blokowanie szumów (stąd te 300bps zamiast np.
+          2400bps). Niemniej coś tam można przesłać łącząc wyjście zasilające z linią RxD
+          w komputerze. Jako nadajnika można wtedy użyć układu przedstawionego poniżej:
+        </p><img src="kwarcnad.gif" width="272" height="180" alt="Image" />
+        <div class="adp">
+        </div>
+        <p>
+          Jest to przykładowy generator stabilizowany kwarcem zasilany bezpośrednio z linii TxD.
+          Układ generuje szerokie widmo harmonicznych, stąd użyty kwarc wcale nie musi
+          odpowiadać odbieranej częstotliwości. Ja np. Użyłem kwarcu 27.125MHz wydłubanego z
+          "walke talke". Dosyć silny sygnał pojawiał się gdzieś na 108MHz. Oczywiście moc
+          układu jest śmiesznie mała - ułamki mW i stąd znikomy zasięg kilku metrów.
+        </p>
+        <p>
+          Wstępnie sądziłem, że te 300bps to wina odbiornika, ale po zastosowaniu innego
+          nadajnika, przedstawionego poniżej, maksymalna prędkość transmisji wzrosła do
+          <strong>9600bps</strong>, a przy podłączeniu RxD bezpośrednio pod wyjście LM358
+          (nóżka 1) nawet <strong>19200bps</strong>.
+        </p><img src="cyfrnad2.gif" width="424" height="332" alt="Image" />
+        <div class="adp">
+        </div>
+        <p>
+          Na tranzystorze Q1 (dowolny pnp z serii BF...) zrealizowany jest generator LC (ale można
+          w to miejsce wstawić generator kwarcowy lub każdy inny). Tranzystor Q2 pełni rolę
+          klucza elektronicznego, wzmacniającego sygnał w.cz z generatora, gdy na drugą bramkę
+          podane jest napięcie dodatnie (stan "1" na TxD), i osłabiającego, gdy na drugą
+          bramkę podane jest napięcie ujemne (stan "0" na TxD). Wartości cewek dla górnego UKF:
+          L1,L2 5zw DNE0.4 . Układ ma zdecydowanie większy zasięg (prawdopodobnie coś koło
+          100m). Można go zwiększyć dostrajając obwód L2C5, stosując solidną antenę (np.
+          Yagi).
+        </p>
+        <p>
+          19200bps jest już raczej nieprzekraczalną granicą, jeśli sygnał będziemy czerpać z
+          detektora FM. Źródłem silnego, o wyższej maksymalnej częstotliwości kluczowania
+          (bps), sygnału w.cz w radioodbiorniku może być także nóżka 13 w UL1211 (wyjście
+          wzmacniacza p.cz). Proponuję podłączyć tam "szybką" (dającą na wyjściu obwiednię
+          sygnału w.cz-sygnał modulujący) aktywną (żeby nie tłumić obwodu p.cz) sondę w.cz,
+          a jej wyjście do linii RxD - <strong>115200bps</strong> gwarantowane, pod warunkiem, że
+          będzie to bardzo szybka sonda.
+        </p>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li class="akt">
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li>
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="index.html">Polski</a>
+          </li>
+          <li>
+            <a href="start-en.htm">English</a>
+          </li>
+        </ul>
+        <p>
+          (C) Grzegorz Podgórski 2000-2011
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

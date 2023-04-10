@@ -1,0 +1,183 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>
+      Prymitywny modem radiowy
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18402278-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    //]]>
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h2>
+          Elektronika, komputer, radio - blog, projekty
+        </h2><a href="https://grzegorzpod.github.io/hobby">https://grzegorzpod.github.io/hobby</a>
+      </div>
+      <div id="nav1">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="start-en.htm"><img alt="English" title="English" src="gb.gif" width="30"
+            height="15" /></a>
+          </li>
+        </ul>
+      </div>
+      <div id="ad2">
+      </div>
+      <div id="body">
+        <h2>
+          Prymitywny modem radiowy AM (max.2400bps) 
+        </h2>
+        <p>
+          Modem (dla niewtajemniczonych) to urządzenie służące do zamiany szeregowego sygnału
+          cyfrowego na analogowy i odwrotnie, który można przesłać linią telefoniczną,
+          radiową itd. Tworzy go MOdulator (zamiana sygnału cyfrowego na analogowy) i DEModulator
+          (zamiana sygnału analogowego na cyfrowy. Ponieważ nie znalazłem nigdzie w literaturze
+          prostego schematu modemu, postanowiłem skonstruować sam takie coś. Uprzedzam, że
+          układ ma bardzo kiepskie osiągi, niemniej działa. Zadaniem układu jest modulowanie
+          sygnału analogowego 10-14kHz sygnałem cyfrowym z wyjścia RS232C tak aby można go
+          było przesłać drogą radiową za pośrednictwem nadajnika UKF i odbierać np. na
+          zwykłym radioodbiorniku. Wykorzystałem tu modulację AM - stanowi niskiemu odpowiada
+          cisza, natomiast wysokiemu nośna 10-14kHz w zależności od możliwości wzmacniacza
+          m.cz w radioodbiorniku. Schemat układu przedstawiam poniżej:
+        </p>
+        <h4>
+          Modulator:
+        </h4><img src="modul.gif" width="621" height="271" alt="Image" />
+        <div class="adp">
+        </div>
+        <p>
+          Na bramce "A" CMOSa 4093 zrobiłem generator pracujący na częstotliwości zależnej od
+          C1 i R1&gt;1k ustalanej za pomocą rezystora (potencjometru) R1- czym mniejsza wartość
+          tym większa częstotliwość. Oczywiście nie może być większa niż ok. 15kHz -
+          większość wzmacniaczy m.cz w radiooodbiornikach może się np. wzbudzać itd. Bramka
+          "B" pełni rolę klucza załączającego sygnał z generatora po pojawieniu się stanu
+          wysokiego na linii "TxD" (wyjście danych RS2232C). Reszty elementów chyba nie trzeba
+          omawiać. Przydałby się jeszcze filtr dolnoprzepustowy na wyjściu, i ale bez niego
+          układ znośnie działa. Nóżki 13,12,9,8 (wejścia) i 7 (masa) trzeba połączyć z
+          masą, a 14 z plusem zasilania ok.9V - napięcie stabilizowane - można je pociągnąć
+          np. z linii DTR w RSie. Jako płytki można użyć jednej z wielu płytek uniwersalnych
+          dostępnych w sklepach. Wyjście "Sygnał analogowy" podłączamy do dowolnego mini
+          nadajnika UKF.
+        </p>
+        <h4>
+          Demodulator:
+        </h4><img src="demodul.gif" width="708" height="317" alt="Image" />
+        <p class="adp">
+        </p>
+        <p>
+          Analogowy sygnał pobieramy z wyjścia głośnikowego lub słuchawkowego w
+          radioodbiorniku. Powinien mieć dużą amplitudę ok. 1V - trzeba rozkręcić radio
+          prawie na maxa, jeśli jest możliwość regulacji tonów wysokich to warto ustawić ją
+          na największe wzmocnienie. Działanie: Sygnały (nośna lub ew. zakłócenia) o
+          amplitudzie pow. ok. 600mV powodują powstawanie impulsów na wyjściu bramki "A",
+          ładujących przez diodę D2 kondensator C2, potencjometr PR1 go rozładowuje - decyduje
+          o upływie czasu od naładowania do poziomu odpowiadającego stanowi "wysokiemu" do
+          rozładowania odpowiadającego stanowi niskiemu. Chodzi o to, żeby ciąg impulsów
+          pochodzących z wyjścia bramki "A" był zamieniany na jeden impuls zanikający dopiero
+          troszkę później niż ostatni impuls podany na wejście. Bramki pełnią tu trochę
+          rolę separatorów. Gdy na wejście ("sygnał analogowy") podawane jest napięcie o
+          odpowiednio wysokiej amplitudzie to na wyjściu układu otrzymujemy stan wysoki, który
+          przekazujemy na linię RxD. Reszta uwag tak samo jak w modulatorze.
+        </p>
+        <p>
+          Strojenie całości rozpoczynamy podłączenia modulatora i demodulatora do RS232C.
+          Odpalamy jakiś program do sterowania wyjściami RS232C (np. mojego COMa z zestawu
+          <a href="download/comtools.zip">ComTools</a>) i dajemy na linię TxD stan "wysoki". Wtedy
+          na wyjściu modulatora powinien pojawić się sygnał, którego amplitudę regulujemy
+          potencjometrem PR1 tak, aby nie przesterować nadajnika. Potencjometr regulacji
+          głośności w nastrojonym na mininadajnik radioodbiorniku podkręcamy do momentu, aż na
+          wyjściu demodulatora pojawi się stan wysoki. Następnie odpalamy jakiś program
+          terminalowy i wysyłamy ciąg znaków przy najniższej prędkości. Jeśli nie ma
+          błędów to zwiększamy prędkość, jeśli są to korygujemy poziom sygnału na
+          wejściu demodulatora (regulacja głośności) lub wartość PR1&gt;1k i C2. Nie ręczę
+          za niezawodność układu - próby przeprowadzałem przy bardzo małej odległości -
+          silny sygnał, a te 2400bps przy częstotliwości 13kHz to mógł być zwykły fart.
+          Oczywiście aby była możliwa transmisja obustronna trzeba wszystko zdublować -
+          nadajnik, odbiornik, modulator i demodulator musi być przy każdym kompie, no i trzeba
+          znaleźć dwie częstotliwości tak aby lokalny nadajnik nie zagłuszał odległego.
+        </p>
+        <p>
+          Wracając do demodulatora - ma on istotną wadę - każdy szum, trzask, dźwięk
+          rozpoznaje jako "nośną" czyli stan wysoki. Proponuje inne rozwiązanie demodulatora z
+          wykorzystaniem LM567 (NE567) (cena coś koło 1.50gr). Jest to dekoder tonu. Pojawienie
+          się nośnej o określonej częstotliwości (definiowanej przez elementy RC połączone
+          do odpowiednich nóżek tej kostki) powoduje efekt zwarcia do masy na wyjściu scalaka.
+          Można tam np. podpiąć przekaźnik-pojawienie się tonu go załączy - ot takie zdalne
+          sterowanie, albo zanegować (bo jest to wyjście typu otwarty kolektor) i podłączyć
+          pod linię RxD w RS232C. Z moich prób wynika, że osiągane prędkości są
+          porównywalne z demodulatorem zamieszczonym powyżej. Układ jest jednak trochę
+          trudniejszy w zestrojeniu-częstotliwość modulatora musi się pokrywać z
+          częstotliwością rozpoznawaną przez demodulator z dokładnością do ułamków
+          procenta. Najlepiej by było, żeby modulator dostarczał sygnału sinusoidalnego (bo
+          taki właśnie sygnał dekoder tonu lubi najbardziej), a zbudowanie generatora sinusa nie
+          jest już takie proste. Z wykorzystania LM567 płynie istotna korzyść - stanowi
+          "niskiemu", wcale nie musi odpowiadać cisza. Zamiast niej może być ton o trochę innej
+          częstotliwości (zagłuszając tym samym wszystkie szumy, trzaski itd.), ale wtedy to
+          już będzie modem FSK ;). Na koniec wspomnę o amplitudzie sygnału podawanego na
+          wejście LM567, której wartość może się już zaczynać od 100-300mV, a wiec
+          spokojnie może pochodzić z wyjścia słuchawkowego, a może nawet z wyjścia odbiornika
+          superreakcyjnego. Zachęcam do eksperymentowania.
+        </p>
+        <p>
+          Zainteresowanym przesyłaniem znaków (danych) drogą radiową przypominam, że oprócz
+          rozwiązań sprzętowych (modemy) istnieją także rozwiązania programowe oparte na
+          karcie dźwiękowej i dające często lepsze efekty. Więcej info na ten temat na
+          stronach dla krótkofalowców np. <a href=
+          "http://www.radio.org.pl">http://www.radio.org.pl</a> .
+        </p>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="index.html">Polski</a>
+          </li>
+          <li>
+            <a href="start-en.htm">English</a>
+          </li>
+        </ul>
+        <p>
+          (C) Grzegorz Podgórski 2000-2011
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

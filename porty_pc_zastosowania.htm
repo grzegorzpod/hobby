@@ -1,0 +1,131 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Description" content=
+    "Programy PC do kodowania i dekodowania sygnałów w podczerwieni stosowanej w RTV" />
+    <title>
+      Obsługa podczerwieni TV
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18402278-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    //]]>
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h2>
+          Elektronika, komputer, radio - blog, projekty
+        </h2><a href="https://grzegorzpod.github.io/hobby">https://grzegorzpod.github.io/hobby</a>
+      </div>
+      <div id="nav1">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="linki.htm">Linki</a>
+          </li>
+          <li>
+            <a href="start-en.htm"><img alt="English" title="English" src="gb.gif" width="30"
+            height="15" /></a>
+          </li>
+        </ul>
+      </div>
+      <div id="ad2">
+      </div>
+      <div id="body">
+        <h2>
+          Sterowanie PC przy pomocy pilota RTV - interfejsik podłączany do RS232C 
+        </h2>
+        <p>
+          Poniżej zamieszczam schemat odbiornika podczerwieni podłączanego do portu szeregowego,
+          którego opis był zamieszczony w CHIPie 11/2000. Układ jest bardzo prosty i
+          współpracuje z wszystkimi pilotami, niestety do dekodowania rozkazów używa komputera
+          PC, stąd jego wysokie wymagania jeśli chodzi o sprzęt (minimum 300MHz). Program
+          dekodujący (np. Girder), realizuje rozkazy odebrane z pilota takie jak regulacja
+          głośności, przemieszczanie myszy i wiele innych. Schemat układu poniżej.
+        </p><img src="pcjako1.gif" width="447" height="207" alt="Image" />
+        <div class="adp">
+        </div>
+        <p>
+          Na wszelki wypadek przypominam, że w przypadku zdalnego sterowania sprzętu RTV
+          powszechnie stosowana jest częstotliwość 36kHz, a więc trzeba się zaopatrzyć w
+          scalaczek: <strong>TSOP1736</strong> lub <strong>SFH506-36.</strong>
+        </p>
+        <p>
+          Korzystając z okazji chciałbym zachęcić do użytkowania moich programów <a href=
+          "download/rc5programy.zip">rc5programy - 428KB</a>.
+        </p>
+        <ul>
+          <li>
+            <strong>GetRC5</strong> wyświetla adres i komende odebraną przez w/w przystawkę
+          </li>
+          <li>
+            <strong>RC5Sender</strong> steruje przystawką emitującą modulowaną podczerwień -
+            czyli z komputera PC robi pilota RTV.
+          </li>
+        </ul>
+        <p>
+          Wymienione programy dotyczą tylko kodu RC5. Być może w przyszłości powstaną
+          programy obsługujące inne standardy kodowania. Aktualnie mogę tylko zaoferować
+          program <a href="download/irmon.zip">irmon - 258KB</a>, prezentujący odebraną paczkę
+          IR w formie przebiegu czasowego.
+        </p>
+        <p>
+          Coś do poczytania o standardach kodowania IR:
+        </p>
+        <p>
+          <a href=
+          "http://www.xs4all.nl/~sbp/knowledge/ir/ir.htm">http://www.xs4all.nl/~sbp/knowledge/ir/ir.htm</a>
+        </p>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="index.html">Polski</a>
+          </li>
+          <li>
+            <a href="start-en.htm">English</a>
+          </li>
+        </ul>
+        <p>
+          (C) Grzegorz Podgórski 2000-2011
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

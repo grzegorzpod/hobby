@@ -1,0 +1,153 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Description" content="Programator na PC generatora kwarcowego TTL DS1065" />
+    <title>
+      Generator kwarcowy DS1065
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+     <script type="text/javascript">
+//<![CDATA[
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18402278-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    //]]>
+    </script>
+ </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h2>
+          Elektronika, komputer, radio - blog, projekty
+        </h2><a href="https://grzegorzpod.github.io/hobby">https://grzegorzpod.github.io/hobby</a>
+      </div>
+      <div id="nav1">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="start-en.htm"><img alt="English" title="English" src="gb.gif" width="30"
+            height="15" /></a>
+          </li>
+        </ul>
+      </div>
+      <div id="ad2">
+      </div>
+      <div id="body">
+        <h2>
+          Generator kwarcowy DS1065 
+        </h2>
+        <p>
+          Układ DS1065 jest kwarcowym generatorem przebiegu taktującego ze zintegrowanym
+          programowalnym preskalerem. W porównaniu z typowymi generatorami w obudowach metalowych
+          DS1065 jest mniejszy (TO-92) i posiada większe możliwości. Może on generować
+          przebieg prostokątny o różnych, zadanych przez użytkownika, częstotliwościach.
+        </p>
+        <p>
+          Więcej na jego temat można znaleźć w nocie katalogowej: <a href=
+          "http://datasheets.maxim-ic.com/en/ds/DS1065.pdf">http://datasheets.maxim-ic.com/en/ds/DS1065.pdf</a>
+        </p>
+        <h3>
+          Hardware
+        </h3>
+        <p>
+          Do konfiguracji scalaka opracowałem programator podłączany do portu szeregowego PC i
+          program obsługujący. Schemat programatora poniżej. Jest to typowy adapter 1-wire.
+          Wartości elementów nie są krytyczne. Zworę ZW trzeba zewrzeć w przypadku zasilania z
+          portu, rozewrzeć w przypadku dołączenia zewnętrznego zasilania 5V. Warto dodać, że
+          DS1065 może być programowany już po wlutowaniu (in system programming).
+        </p><img src="DS1065Prog.GIF" width="651" height="432" alt="Image" />
+        <p></p>
+        <div class="adp">
+        </div>
+        <h3>
+          Software
+        </h3>
+        <p>
+          Zrzut głównego okna programu <a href="download/DS1065prog.zip">DS1065prog.zip-195KB</a>
+          w trakcie pracy widoczny jest poniżej:
+        </p><img src="ds1065soft.gif" width="200" height="320" alt="Image" />
+        <h4>
+          Obsługa - zaprogramowanie czujnika
+        </h4>
+        <ul>
+          <li>Podłączyć programator do PC a do programatora czujnik DS1065.
+          </li>
+          <li>Uruchomic program i Wybrać port szeregowy, do którego podłączony jest
+          programator.
+          </li>
+          <li>Nacisnąć start - nastąpi przełączenie w tryb programowania.
+          </li>
+          <li>Określić ustawienia preskalera i podzielnika.
+          </li>
+          <li>Wybrać przycisk "Zapisz" - ustawienia zostaną wprowadzone do czujnika.
+          </li>
+          <li>Uruchomić ponownie program i zweryfikować ustawienia.
+          </li>
+        </ul>
+        <h4>
+          Funkcje przycisków
+        </h4>
+        <ul>
+          <li>Panel ustawienia:
+            <ul>
+              <li>"START"-otwarcie portu
+              </li>
+              <li>"STOP"-zamknięcie portu
+              </li>
+            </ul>
+          </li>
+		  <li>"O.."-informacja o programie
+          </li>
+          <li>"Czytaj" - odczytuje z pamięci czujnika ustawienia
+          </li>
+          <li>"Zapisz" - zapisuje do pamięci czujnika ustawienia
+          </li>
+        </ul>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="index.html">Polski</a>
+          </li>
+          <li>
+            <a href="start-en.htm">English</a>
+          </li>
+        </ul>
+        <p>
+          (C) Grzegorz Podgórski 2000-2011
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

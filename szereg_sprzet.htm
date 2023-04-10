@@ -1,0 +1,622 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Description" content="Łaczenie PC przez port szeregowy COM i równoległy LPT." />
+    <title>
+      Porty szeregowe w PC- sprzęt
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18402278-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    //]]>
+    </script>
+	
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h2>
+          Elektronika, komputer, radio - blog, projekty
+        </h2><a href="https://grzegorzpod.github.io/hobby">https://grzegorzpod.github.io/hobby</a>
+      </div>
+      <div id="nav1">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="start-en.htm"><img alt="English" title="English" src="gb.gif" width="30"
+            height="15" /></a>
+          </li>
+        </ul>
+      </div>
+      <div id="ad2">
+      </div>
+      <div id="body">
+        <h2>
+          Porty szeregowe w PC- sprzęt 
+        </h2>
+        <p>
+          Zebrałem garść informacji dotyczącą transmisji danych miedzy komputerami PC za
+          pośrednictwem portu szeregowego. Tutaj zostanie omówiona strona sprzętowa czyli jak
+          zrobić kabelki lub czym je zastąpić.
+        </p>
+        <ul>
+          <li>
+            <a href="#wstep">Wstęp - trochę ogólników</a>
+          </li>
+          <li>
+            <a href="#kable">Różne warianty przewodów</a>
+          </li>
+          <li>
+            <a href="#przeplyw">Pare słów o sterowaniu przepływem</a>
+          </li>
+          <li>
+            <a href="#wyprowadzenia">Układ wyprowadzeń portu</a>
+          </li>
+          <li>
+            <a href="#bezprzew">Transmisja bezprzewodowa - łącze laserowe</a>
+          </li>
+        </ul>
+        <h3>
+          <a name="wstep" id="wstep"></a>Wstęp - wymiana danych przy użyciu kabla:
+        </h3>
+        <h4>
+          Tak wygląda układ połączeń w standardowym kablu null-modem:
+        </h4>
+        <table>
+          <tr>
+            <th>
+              9 pin(DB9)
+            </th>
+            <th>
+              25 pin(DB25)
+            </th>
+            <th>
+              Kierunek przepływu danych:
+            </th>
+            <th>
+              25 pin(DB25)
+            </th>
+            <th>
+              9 pin(DB9)
+            </th>
+          </tr>
+          <tr>
+            <td>
+              pin 5
+            </td>
+            <td>
+              pin 7
+            </td>
+            <td>
+              GND &lt;==&gt; GND
+            </td>
+            <td>
+              pin 7
+            </td>
+            <td>
+              pin 5
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pin 3
+            </td>
+            <td>
+              pin 2
+            </td>
+            <td>
+              TxD ==&gt; RxD
+            </td>
+            <td>
+              pin 3
+            </td>
+            <td>
+              pin 2
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pin 7
+            </td>
+            <td>
+              pin 4
+            </td>
+            <td>
+              RTS ==&gt; CTS
+            </td>
+            <td>
+              pin 5
+            </td>
+            <td>
+              pin 8
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pin 6
+            </td>
+            <td>
+              pin 6
+            </td>
+            <td>
+              DSR&lt;== DTR
+            </td>
+            <td>
+              pin 20
+            </td>
+            <td>
+              pin 4
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pin 2
+            </td>
+            <td>
+              pin 3
+            </td>
+            <td>
+              RxD &lt;== TxD
+            </td>
+            <td>
+              pin 2
+            </td>
+            <td>
+              pin 3
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pin 8
+            </td>
+            <td>
+              pin 5
+            </td>
+            <td>
+              CTS &lt;== RTS
+            </td>
+            <td>
+              pin 4
+            </td>
+            <td>
+              pin 7
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pin 4
+            </td>
+            <td>
+              pin 20
+            </td>
+            <td>
+              DTR ==&gt; DSR
+            </td>
+            <td>
+              pin 6
+            </td>
+            <td>
+              pin 6
+            </td>
+          </tr>
+        </table>
+        <ul>
+          <li>
+            <strong>Odległość:</strong> do kilkunastu metrów przy pełnej prędkości
+          </li>
+          <li>
+            <strong>Liczba drutów:</strong> do dwukierunkowej transmisji wystarczą tylko 3 (te
+            oznaczone na zielono w tabeli). Użycie wszystkich 7 usprawnia i przyspiesza
+            transmisję, ale nie jest niezbędne w zdecydowanej większości programów i gier. Do
+            jednokierunkowej transmisji wystarczą nawet 2 żyły - masa i któraś z dwóch
+            pozostałych.
+          </li>
+          <li>
+            <strong>Prędkość:</strong> maksymalna prędkość na typowym złączu wynosi 115200
+            bps (10 - 12 KB/s) i jest bliska transferowi osiąganemu przez typową stację
+            dyskietek
+          </li>
+        </ul>
+        <h3>
+          <a name="wyprowadzenia" id="wyprowadzenia"></a>Układ wyprowadzeń portu:
+        </h3>
+        <table>
+          <tr>
+            <th>
+              Wtyk DB25
+            </th>
+            <th>
+              Wtyk DB9
+            </th>
+            <th>
+              Sygnał
+            </th>
+            <th>
+              Opis
+            </th>
+            <th>
+              Funkcja
+            </th>
+          </tr>
+          <tr>
+            <td>
+              1
+            </td>
+            <td>
+              -
+            </td>
+            <td>
+              GND
+            </td>
+            <td>
+              Chassis Ground
+            </td>
+            <td>
+              masa
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              TxD
+            </td>
+            <td>
+              Transmit Data
+            </td>
+            <td>
+              wyjście
+            </td>
+          </tr>
+          <tr>
+            <td>
+              3
+            </td>
+            <td>
+              2
+            </td>
+            <td>
+              RxD
+            </td>
+            <td>
+              Receive Data
+            </td>
+            <td>
+              wejście
+            </td>
+          </tr>
+          <tr>
+            <td>
+              4
+            </td>
+            <td>
+              7
+            </td>
+            <td>
+              RTS
+            </td>
+            <td>
+              Request to Send
+            </td>
+            <td>
+              wyjście
+            </td>
+          </tr>
+          <tr>
+            <td>
+              5
+            </td>
+            <td>
+              8
+            </td>
+            <td>
+              CTS
+            </td>
+            <td>
+              Clear to Send
+            </td>
+            <td>
+              wejście
+            </td>
+          </tr>
+          <tr>
+            <td>
+              6
+            </td>
+            <td>
+              6
+            </td>
+            <td>
+              DSR
+            </td>
+            <td>
+              Data Set Ready
+            </td>
+            <td>
+              wejście
+            </td>
+          </tr>
+          <tr>
+            <td>
+              7
+            </td>
+            <td>
+              5
+            </td>
+            <td>
+              GND
+            </td>
+            <td>
+              Signal Ground
+            </td>
+            <td>
+              masa
+            </td>
+          </tr>
+          <tr>
+            <td>
+              8
+            </td>
+            <td>
+              1
+            </td>
+            <td>
+              DCD
+            </td>
+            <td>
+              Carrier Detect
+            </td>
+            <td>
+              wejście
+            </td>
+          </tr>
+          <tr>
+            <td>
+              20
+            </td>
+            <td>
+              4
+            </td>
+            <td>
+              DTR
+            </td>
+            <td>
+              Data Terminal Ready
+            </td>
+            <td>
+              wyjście
+            </td>
+          </tr>
+          <tr>
+            <td>
+              22
+            </td>
+            <td>
+              9
+            </td>
+            <td>
+              RI
+            </td>
+            <td>
+              Ring Indicator
+            </td>
+            <td>
+              wejście
+            </td>
+          </tr>
+        </table>
+        <div class="adp">
+        </div>
+        <h3>
+          <a name="kable" id="kable"></a>Kable:
+        </h3>
+        <p>
+          Schemat pełnego kabla "null modem" był zamieszczony wcześniej w postaci tabeli. Do
+          przesyłania danych w jedną stronę wystarczą nawet 2 żyły! Można się o tym
+          przekonać wykonując kabel wg. poniższego schematu i odpalając programy terminalowe na
+          obu komputerach. W obu programach ustalamy taką samą prędkość. Na terminalu
+          komputera "nadawanie" wprowadzamy znaki, które powinny być wyświetlane na ekranie
+          terminala komputera "odbiór":
+        </p><img align="top" alt="WARIANT 1" border="3" src="kabel2.gif" width="521" height=
+        "194" />
+        <p>
+          Poniżej zamieszczam schemat 3-żyłowego kabla do transmisji w obie strony. Oprócz
+          terminali potrafią z niego korzystać takie programy jak NC, INTERSVR, LapLink, gry w
+          rodzaju DOOMa itd. Najlepiej wykonać go wykorzystując zwykły ekranowany kabel stereo
+          (2 żyły w ekranie). Ekran łączymy wtedy z masą (5):
+        </p><img alt="WARIANT 2" border="3" src="kabel1.gif" width="519" height="209" />
+        <p>
+          Jest jeszcze wersja, bardziej zaawansowana, kabla 3-żyłowego, polegająca na wykonaniu
+          kilku zwor we wtykach. Zwory RTS(7) z CTS(8) oraz DCD(1),DSR(6) z DTR(4) przydają się
+          przy oszukiwaniu funkcji DOSa związanych z COMami (np. praca zdalna) oraz oszukiwaniem
+          np. DialUp Networking z WINdy. Uwaga: są gry i programy, które nie dadzą się oszukać
+          i potrafią chodzić tylko na kablu 7-żyłowym.
+        </p><img alt="WARIANT 3" border="3" src="kabel3.gif" width="466" height="209" />
+        <h3>
+          Reasumując:
+        </h3>
+        <p>
+          Jeśli masz 2 komputery, które chcesz spiąć jak najmniejszym kosztem to nie kupuj kart
+          sieciowych, 25-żyłowego kabla równoległego, 7-żyłowego kabla "null-modem", tylko
+          kup dwie żeńskie wtyczki DB9 z obudowami, pare metrów kabla stereo (nawet tego po 50
+          gr za metr) i zlutuj wszystko wg wariantu 2 lub 3.
+        </p>
+        <h3>
+          <a name="przeplyw" id="przeplyw"></a>Parę słów o sterowaniu przepływem:
+        </h3>
+        <p>
+          Sterowanie przepływem (handshaking) to sygnalizacja gotowości do odbioru. Modem może
+          sygnalizować, że chwilowo nie chce przyjmować danych, podobnie komputer. Metody są
+          dwie:
+        </p>
+        <ol>
+          <li>Programowa: sygnalizacja polega na wysyłaniu specjalnych znaków XON-zezwolenie na
+          transmisję, XOFF-zakaz transmisji
+          </li>
+          <li>Sprzętowa: sygnalizacja odbywa się przez linie CTS (Clear To Send - wolno nadawać,
+          w ten sposób modem sygnalizuje swoją gotowość przyjmowania danych) i RTS (Request To
+          Send, żądanie nadawania - w ten sposób odzywa się komputer).
+          </li>
+        </ol>
+        <p>
+          Obie metody obsługują zdecydowanie wszystkie programy. W przypadku transmisji full
+          duplex (minimum 3 żyły) oddzielną linią biegną dane z lokalnego komputera do
+          odległego komputera (lub modemu), a oddzielną w odwrotnym kierunku. W takim wypadku
+          sterowanie przepływem jest zbyteczne, no chyba że komputer (modem) nie nadąża z
+          odbieraniem znaków, ale tę kwestię tu pomijamy.
+        </p>
+        <p>
+          Są sytuacje, w których jest niezbędne:
+        </p>
+        <ol>
+          <li>Transmisja obustronna 2-żyłowym przewodem
+          </li>
+          <li>Transmisja obustronna przez radio (zwłaszcza na większe odległości, kiedy
+          jednoczesna praca czułego odbiornika obok silnego nadajnika jest praktycznie niemożliwa
+          </li>
+          <li>Transmisja obustronna przez podczerwień (powody jw)
+          </li>
+        </ol>
+        <p>
+          Gdy zachodzi potrzeba skorzystania z handshakingu przy łączności half duplex, trzeba
+          zbudować układ zabraniający transmisji (przez podanie "0" na linię CTS) gdy wykryje,
+          że komputer odległy rozpoczął ją pierwszy.
+        </p>
+        <h3>
+          <a name="bezprzew" id="bezprzew"></a>Transmisja bezprzewodowa-łącze laserowe:
+        </h3>
+        <h4>
+          Interpretacja danych na wejściach i wyjściach portów standardu RS232C przedstawia się
+          następująco:
+        </h4>
+        <ul>
+          <li>na wejściu: "1"=od "+2V" do "+15V" ;"0"=od "+1V" do "-15V"
+          </li>
+          <li>na wyjściu "1"="+5V" do "+15V" ; "0"="-5V" do "-15V"
+          </li>
+        </ul>
+        <p>
+          Trzy albo dwie żyły (transmisja jednokierunkowa) da się zastąpić ukladem "nadajnik -
+          odbiornik", wykorzystując do transmisji fale radiowe lub wiązkę lasera. Kiedyś
+          zbudowałem prosty układ do transmisji jednokierunkowej (po zdublowaniu elementów
+          możliwa jest także dwukierunkowa) wykorzystujący jako medium wiązkę lasera. Układ w
+          zależności od oświetlenia panującego w otoczeniu i skupienia wiązki umożliwiał
+          transfer 4800 - 9600 bps a przy optymalnych warunkach nawet 19200! Poniżej zamieszczam
+          schematy nadajnika i odbiornika:
+        </p>
+        <h4>
+          Nadajnik:
+        </h4><img src="nadlas.gif" width="627" height="176" alt="Image" />
+        <div class="adp">
+        </div>
+        <h4>
+          Odbiornik:
+        </h4><img src="odblas.gif" width="321" height="157" alt="Image" />
+        <h4>
+          Montaż:
+        </h4>
+        <p>
+          Jak widać układ jest bardzo prosty. Jedynym trudnym do zdobycia elementem może być
+          latarka laserowa. Ja swoją kupiłem na stadionie dziesięciolecia w W-wie za jedyne
+          10zł. Nie zalecam grzebania wewnątrz latarki bo jest to urządzenie dosyć delikatne.
+          Przystosowanie jej do pracy polega jedynie na zwarciu wyłącznika przy pomocy spinacza
+          do bielizny i podłączeniu przewodów. Tu sposobów jest wiele, ale najlepiej
+          wyposażyć się w przewody zakończone malutkimi klipsami, "minus" wetknąć w środek,
+          a "plus" przypiąć gdzieś na obudowie no i sprawdzić przy pomocy bateryjki czy
+          wszystko "łączy". Tranzystor T1 i towarzyszące mu elementy najlepiej zamknąć w
+          obudowie wtyku. Podobnie można uczynić z R3. Zasada działania jest prosta: pojawienie
+          "1" na TxD zapala latarkę. Oświetlony fototranzystor (dowolny typ) zwiera wyjście DTR
+          z wejściem RxD (na kompie-odbiorcy). Oczywiście warunkiem poprawnej pracy odbiornika
+          jest obecność stanu "1" na wyjściu DTR. Zazwyczaj programy terminalowe ustawiają je
+          na "1", ale jeśli jest inaczej - trzeba to zrobić samemu np. przy pomocy mojego
+          programu do monitorowania stanu portu. Rezystor R3 wpływa na czułość odbiornika. W
+          zależności od potrzeb można go zmniejszyć (ale tak, aby silne światło nie
+          spowodowało przeciążenia linii DTR lub fototranzystora - prąd w obwodzie DTR nie
+          może przekroczyć 4-5mA), zwiększyć albo pominąć.
+        </p>
+        <p>
+          <strong>Uruchomienie</strong> należy rozpocząć od odpalenia na obu komputerach
+          programów terminalowych i ustawienia w nich takich samych parametrów transmisji. Na
+          początek 150bps. Potencjometrem R2 trzeba ustawić prąd spoczynkowy latarki na
+          minimalny. Następnie trzymając jakąś literkę na klawiaturze komputera - nadawcy
+          wycelować wiązkę w fototranzystor tak aby na ekranie komputera - odbiorcy pojawiała
+          się owa literka. Laser powinien wtedy migać. Jeśli wszystko jest ok to zwiększamy
+          prędkość transmisji i znów próbujemy. Jeśli coś nie działa to zazwyczaj wina
+          leży po stronie odbiornika np. zbyt duża czułość. Najlepiej próby przeprowadzać
+          wieczorem, gdy jest już ciemno. Napięcie na wyprowadzeniu RxD (2) względem masy (5)
+          odbiornika przy nieoświetlonym fototranzystorze nie powinno przekraczać 1-1.5V
+          natomiast po oświetleniu co najmniej 2V. Zanim zbudujesz powyższy układ, warto
+          "potrenować" na jego przewodowym odpowiedniku, którego schemat zamieszczam poniżej:
+        </p><img border="3" src="kabel2.gif" width="521" height="194" alt="Image" />
+        <h4>
+          A propos testów:
+        </h4>
+        <p>
+          Wstępnie można je przeprowadzać używając tylko jednego komputera. Możemy np.
+          nadajnik podłączyć do jednego portu, a odbiornik do drugiego i odpalić 2 terminale.
+          Można także wykorzystać tylko jeden port (nadawanie łączymy z linią TxD a odbiór z
+          RxD). Wysyłane znaki będą wtedy "wracały" do portu.
+        </p>
+        <h4>
+          Nie przetestowana propozycja modernizacji układu:
+        </h4>
+        <p>
+          Fototranzystor jest elementem wolnym, a do poprawnej pracy w roli klucza wymaga
+          skutecznego oświetlenia. Aby ominąć te niedogodności, proponuję zastosowanie
+          fotodiody zintegrowanej ze wzmacniaczem np. OPT101.
+        </p>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="index.html">Polski</a>
+          </li>
+          <li>
+            <a href="start-en.htm">English</a>
+          </li>
+        </ul>
+        <p>
+          (C) Grzegorz Podgórski 2000-2011
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

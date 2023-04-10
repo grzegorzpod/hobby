@@ -1,0 +1,267 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Description" content=
+    "Programy i proste przystawki do pomiaru napięcia przez PC. TLC549, NE555" />
+    <title>
+      Pomiar napięcia przy pomocy PC
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18402278-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    //]]>
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h2>
+          Elektronika, komputer, radio - blog, projekty
+        </h2><a href="https://grzegorzpod.github.io/hobby">https://grzegorzpod.github.io/hobby</a>
+      </div>
+      <div id="nav1">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="start-en.htm"><img alt="English" title="English" src="gb.gif" width="30"
+            height="15" /></a>
+          </li>
+        </ul>
+      </div>
+      <div id="ad2">
+      </div>
+      <div id="body">
+        <h2>
+          Pomiar napięcia przy pomocy PC 
+        </h2>
+        <h3>
+          Wykorzystanie przetwornika AC
+        </h3>
+        <h4>
+          Sprzęt
+        </h4><img border="0" src="tlcprzetw.gif" width="435" height="238" alt="Image" />
+        <img border="0" src="tlc549-wyprowadzenia.gif" width="299" height="186" alt="Image" />
+        <p>
+          Przystawka opiera się na układzie TLC549, 8-bitowym szeregowym przetworniku cyfrowym.
+          Więcej szczegółów na temat TLC549 znajdziesz na <a href=
+          "http://www.ti.com">http://www.ti.com</a> lub w stosownym PDFie.
+        </p>
+        <h4>
+          Zasada działania i montaż
+        </h4>
+        <p>
+          Zasilanie jest pobierane z linii RTS. Zadaniem kondensatora (oczywiście może być dużo
+          mniejszy niż 1000uF) jest zminimalizowanie tętnień napięcia zasilającego. Rezystory
+          10k zmniejszają obciążenie portu gdy na na liniach TxD i DTR jest stan "niski". Można
+          je pominąć bez szkody dla układu i PC. Interfejs szeregowy powinien być odporny nawet
+          na zwarcie, ale niektórzy producenci płyt głównych mogą ten szczegół pominąć...
+          Zadaniem diod Zenera 5V1 jest dopasowanie poziomów napięć z RS232C do TTL. Ze względu
+          na prostotę układu montaż najlepiej wykonać na płytce uniwersalnej lub metodą
+          pająka.
+        </p>
+        <p>
+          <strong>Uwaga: układ po załączeniu zasilania potrzebuje ok. 1s na naładowanie
+          kondensatora i ustalenie warunków pracy.</strong>
+        </p>
+        <h4>
+          Parametry przystawki
+        </h4>
+        <ul>
+          <li>
+            <strong>Mierzone napięcie</strong> 0 - 2.5V ze "schodkiem" co 10mV lub przy zwarciu
+            nóżki 1 (REF+) z nóżką 8(Vcc) 0 - 5V co 20mV - rezystory 51k i kondensator 0.1u
+            są wtedy niepotrzebne.
+          </li>
+          <li>
+            <strong>Maksymalna częstotliwość na wejściu</strong> do 15kHz - zależy od
+            szybkości komputera.
+          </li>
+          <li>
+            <strong>Zasilanie układu</strong> odbywa się bezpośrednio z portu. Port szeregowy
+            jest w stanie zapewnić zasilanie jednej kostki TLC549.
+          </li>
+          <li>
+            <strong>Liczba kanałów = 1</strong>. Teoretycznie można zwiększyć liczbę
+            kanałów do 4 (tyle jest wejść w porcie szeregowym), ale wtedy zapotrzebowanie na
+            energię do zasilania układu wzrośnie i zajdzie konieczność zastosowania zasilania
+            zewnętrznego.
+          </li>
+        </ul>
+        <h4>
+          Przykładowe zastosowania
+        </h4>
+        <ul>
+          <li>Pomiar napięcia
+          </li>
+          <li>Pomiar wielkości dających się przetworzyć na napięcie np. temperatury. Do
+          pomiaru temperatury wykorzystać można układ LM35 (patrz PDF). Pobór prądu przez LM35
+          jest niewielki i z powodzeniem można ją zasilać równolegle z TLC549 (Vcc). Dodatkowa
+          korzyść płynąca z jednoczesnego zastosowania LM35 i TLC549 jest taka, że
+          przetworzona wartość odczytana z TLC549 zawarta między 0 a 255 odpowiada dokładnie
+          mierzonej temperaturze - rozdzielczość 1 stopień Celsjusza (pod warunkiem, że na
+          wejście REF+ podane zostanie napięcie 2.56V. Krótki wyciąg z PDFa poniżej:
+          </li>
+        </ul><img src="lm35-polaczenia.gif" width="309" height="174" alt="Image" /> <img src=
+        "lm35-tyl.gif" width="204" height="198" alt="Image" />
+        <div class="adp">
+        </div>
+        <h4>
+          Oprogramowanie
+        </h4>
+        <h5>
+          1. Oscyloskopik TLC549 v1.0
+        </h5>
+        <p>
+          Zadaniem programu <strong>Oscyloskopik TLC549 v1.0</strong> jest rejestrowanie
+          przebiegów analogowych dzięki przystawce opartej na TLC549. Program jest w stanie
+          zapamiętać 100000 próbek przy próbkowaniu co 10ms lub wyżej. <a href=
+          "download/tlcsco.zip" onclick="javascript: pageTracker._trackPageview('/tlcsco');">TLCSCO
+          for WIN - 212KB</a>
+        </p><img src="tlcsco.jpg" width="300" height="191" alt="Image" />
+        <h6>
+          Znaczenie klawiszy ekranowych:
+        </h6>
+        <ul>
+          <li>
+            <strong>START</strong> - rozpoczęcie rejestracji
+          </li>
+          <li>
+            <strong>STOP</strong> - zakończenie rejestracji
+          </li>
+          <li>
+            <strong>Export do pliku</strong> - zapisanie w pliku txt zarejestrowanych próbek.
+            Funkcja przydatna, gdy chcesz obrabiać wyniki przy pomocy jakichś bardziej
+            zaawansowanych narzędzi jak arkusze kalkulacyjne itd.
+          </li>
+          <li>
+            <strong>O</strong> - informacja o programie.
+          </li>
+        </ul>
+        <p>
+          Istnieje możliwość próbkowania z okresem mniejszym od 10ms zależnym od szybkości
+          komputera. Takie rozwiązanie niesie ze sobą ryzyko przekłamań zarówno czasu jak i
+          odczytywanych wartości. Opcja ta jest uaktywniana przez zaznaczenie CheckBoxa
+          <strong>Maksymalna czestotliwosc probkowania</strong>.
+        </p>
+        <h5>
+          2. ComTools for DOS v 2.0
+        </h5>
+        <p>
+          W pakiecie znajduje się kilka programików korzystających z przystawki. Po szczegóły
+          odsyłam do dokumentacji. <a href="download/comtools.zip" onclick=
+          "javascript: pageTracker._trackPageview('/comtools');">comtools v2.0 for DOS - 226KB</a>
+        </p>
+        <h3>
+          Wykorzystanie przetwornika napięcie - wypełnienie
+        </h3>
+        <h4>
+          Sprzęt
+        </h4>
+        <p>
+          Konwersja A/C może być realizowana przez pomiar czasu trwania impulsu.
+        </p>
+        <p>
+          Schemat przystawki poniżej.
+        </p><img src="wolt555s.GIF" width="439" height="207" alt="Image" />
+        <div class="adp">
+        </div>
+        <p>
+          Konwersja A/C jest realizowana przez pomiar czasu trwania impulsu t na wyjściu NE555 po
+          jego wyzwoleniu ujemnym impulsem na wejściu 2. Wartość czasu jest przeliczana na
+          napięcie zgodnie ze wzorem:
+        </p>
+        <pre>
+Uwe=Vcc*(1-EXP(-t / R*C))
+</pre>
+        <h4>
+          Parametry przystawki
+        </h4>
+        <ul>
+          <li>Rezystancja wejściowa: ok. 2k
+          </li>
+          <li>Zakres mierzonego napięcia: od 2V do 0.9*Vcc (Vcc=ok.9V)
+          </li>
+          <li>Błąd i powtarzalność pomiarów zależą od szybkości komputera i zastosowanych
+          podzespołów
+          </li>
+        </ul>
+        <h4>
+          Oprogramowanie
+        </h4>
+        <h5>
+          Wolt555 v. 1.0
+        </h5>
+        <p>
+          Program <a href="download/wolt555.zip" onclick=
+          "javascript: pageTracker._trackPageview('/wolt555');">Wolt555 - 270KB</a> służy do
+          pomiaru napięcia przy pomocy przystawki.
+        </p><img border="0" src="wpe1.gif" width="298" height="358" alt="Image" />
+        <h5>
+          Obsługa programu
+        </h5>
+        <p>
+          W zakładce <strong>ustawienia</strong> określ port i wartości elementów. Wartości
+          podawane w programie będą się trochę różnić od wartości rzeczywistych - trzeba je
+          dobrać tak aby wartość pomiaru w zakresie pracy była najbliższa rzeczywistej. Celem
+          poprawienia powtarzalności wyników program wykonuje n pomiarów gdzie n to
+          <strong>Ilosc pom</strong> i uśrednia wynik. Po określeniu parametrów przejdź do
+          zakładki <strong>Główny panel</strong> i naciśnij przycisk <strong>START</strong>
+          celem rozpoczęcia rejestracji. Napięcie jest odczytywane w interwale 0.5 sek.
+        </p>
+        <h5>
+          Uwaga:
+        </h5>
+		<p>Gdy wejście 5 "wisi w powietrzu" pojawia się na nim napięcie równe 2/3 Vcc i
+        takowe pokazuje program.
+        </p>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="index.html">Polski</a>
+          </li>
+          <li>
+            <a href="start-en.htm">English</a>
+          </li>
+        </ul>
+        <p>
+          (C) Grzegorz Podgórski 2000-2011
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

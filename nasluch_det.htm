@@ -1,0 +1,227 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Description" content=
+    "Praktyczna realizacja odbiornika detektorowego z diodą germanową i odbiornika superreakcyjnego." />
+    <title>
+      Odbiornik detektorowy i superreakcyjny
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18402278-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    //]]>
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h2>
+          Elektronika, komputer, radio - blog, projekty
+        </h2><a href="https://grzegorzpod.github.io/hobby">https://grzegorzpod.github.io/hobby</a>
+      </div>
+      <div id="nav1">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li class="akt">
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li>
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="linki.htm">Linki</a>
+          </li>
+          <li>
+            <a href="start-en.htm"><img alt="English" title="English" src="gb.gif" width="30"
+            height="15" /></a>
+          </li>
+        </ul>
+      </div>
+      <div id="ad2">
+      </div>
+      <div id="body">
+        <h2>
+          Odbiornik detektorowy i superreakcyjny 
+        </h2>
+        <p>
+          Zbudowanie odbiornika superheterodynowego, nawet dzisiaj, gdy pełno specjalizowanych
+          scalaków i ceramicznych filtrów p.cz wymaga dużo cierpliwości, wielu cewek do
+          zestrojenia i oczywiście doświadczenia... Zawsze można spróbować przestroić gotowe
+          radio z AM czy FM do odbioru innych, niż fabrycznie przewidziane częstotliwości, ale
+          istnieje ryzyko, że taki zabieg może się nie udać (niższa czułość od zamierzonej,
+          dryfowanie częstotliwości, zrywanie drgań heterodyny itd.), nie chce nikogo
+          zniechęcać, ale zaprosić do eksperymentowania z prostszymi układami. Pokażę tu, że
+          można zbudować radioodbiornik, a dobierając odpowiednio obwody LC umożliwić sobie
+          odbiór częstotliwości od kilkuset kHz do blisko 200MHz.
+        </p>
+        <h3>
+          Odbiornik detektorowy:
+        </h3>
+        <p>
+          Nie chce mi się rozpisywać na temat zasady jego działania, bo chyba każdy radioamator
+          się z nim zetknął, więc zamieszczę tylko schemat (zródło Elektor Elektronik) i
+          parę słów komentarza.
+        </p><img src="radio_det_sluch.gif" width="439" height="359" alt="Image" />
+        <div class="adp">
+        </div>
+        <p>
+          Jest to klasyczny odbiornik detektorowy. Kiedyś do jego wyjścia podłączano słuchawki
+          wysokoomowe. Aby podłączyć słuchawki niskoomowe trzeba zastosować transformator jak
+          na schemacie - takie przełożenia mają transformatorki sieciowe od zasilaczy
+          wtyczkowych. Zamiast słuchawek można oczywiście podłączyć dowolny wzmacniacz m.cz
+          albo głośniki aktywne. Dioda to dowolna dioda germanowa AAP152,153, albo stary
+          DOG52..53. Na takim odbiorniku jest możliwy odbiór praktycznie wszystkiego (dobrze
+          ponad 100MHz), ale jego czułość i selektywność ogranicza zastosowanie do fal
+          długich i średnich (150-1500kHz). Wg. książki Wojciechowskiego "Zdalne kierowanie
+          modeli" (1967) z nadajnikiem o mocy 1W (27MHz) zapewnia łączność w odległości do
+          25m, podczas gdy próby przeprowadzone z odbiornikiem superreakcyjnym - ponad 1km!.
+          Czułość można zwiększyć stosując przedwzmacniacz w.cz. Obecnie jednak odbiorniki
+          detektorowe wyszły zupełnie z użycia. Oto ewentualne zastosowania:
+        </p>
+        <ul>
+          <li>nasłuch stacji AM: fale długie, średnie, pasmo CB (bardzo małe odległości)
+          </li>
+          <li>ciekawostka: źródło zasilania - może nim być taki odbiornik umieszczony w
+          pobliżu stacji nadawczej i wyposażony w solidną antenę (przynajmniej kilkanaście
+          metrów linki stalowej) i uziemienie (rura wodociągowa)
+          </li>
+        </ul>
+        <h3>
+          Odbiornik superreakcyjny:
+        </h3>
+        <p>
+          W zasadzie są to generatory w.cz, które pracują przy tak dobranym sprzężeniu
+          zwrotnym, że drgania w.cz równe częstotliwości sygnału w ich obwodzie rezonansowym
+          są okresowo wzbudzane i tłumione z częstotliwością ponadakustyczną zwaną
+          częstotliwością wygaszania. Złożone przebiegi elektryczne w obwodach odbiorników
+          powodują powstawanie jeszcze jednej częstotliwości - tzw. szumu superreakcji. Szum
+          ten, charakterystyczny dla pracy odbiorników superreakcyjnych, możemy usłyszeć
+          włączając słuchawki (wysokoomowe) na wyjściu odbiornika. Jest on podobny do szumu
+          gotującej się wody i znika przy odbiorze fali nośnej z nadajnika. Zalety: wysoka
+          czułość (zbliżona do czułości odbiorników superheterodynowych), prostota układu,
+          posiadanie automatycznej regulacji wzmocnienia. Wady: zła selektywność (w pojęciu
+          łatwego zestrojenia z nadajnikiem bez stabilizacji kwarcowej może to być zaleta),
+          wrażliwość na długość anteny, pojemność itd. (sposobem na to są przedwzmacniacze
+          w.cz, lub słabe sprzężenie anteny z obwodem LC odbiornika), promieniowanie
+          zakłócające słabej mocy (dwa pracujące obok siebie odbiorniki będą się
+          zakłócać). Zazwyczaj takie odbiorniki można znaleźć w prostych radiotelefonach
+          "Walke-Talke", aparaturze odbiorczej zdalnego sterowania (kiedyś 27MHz, teraz 35-38 albo
+          nawet 433,2MHz). Tak wygląda typowy "podręcznikowy" odbiornik superreakcyjny:
+        </p><img src="odbior1.gif" width="404" height="376" alt="Image" />
+        <div class="adp">
+        </div>
+        <p>
+          Prezentowany tutaj jest na pasmo CB-27MHz.. Jako tranzystora można użyć dowolnego
+          BF... np. BF199. Po zamianie obwodu LC: L1=ok.7zw. na średnicy 3mm DNE0.3mm, C2=3-30p i
+          C3=8.2p udało mi się na nim odbierać stacje UKF-FM(88-108MHz) oraz (w skrajnym
+          położeniu rotora C2) pasmo lotnicze (nadaje w AMie i dlatego bardzo dobrze je słychać
+          na takim odbiorniku). Przy dołączaniu do odbiornika anteny dachowej kabelkiem
+          koncentrycznym 75Ohm lub symetrycznym 300Ohm, lepiej jest zamiast sprzężenia przez
+          kondensator C1, zastosować sprzężenie indukcyjne - na cewce L1 (lub wzdłuż jej osi
+          tuż obok) nawijamy cewkę "antenową", ok. 2zw. Jeden jej koniec łączymy z masą,
+          drugi z żyłką kabla antenowego. W przypadku kabla symetrycznego cewka antenowa bedzie
+          mieć ok. 4zw i oba jej końce łączymy z żyłami przewodu.
+        </p>
+        <h4>
+          Strojenie:
+        </h4>
+        <p>
+          Z moich doświadczeń wynika, że ogranicza się ono do rozkręcenia PRka R2 na max -
+          wtedy powinien być słyszalny tzw. "szum superreacji". Przy pomocy jakiegoś generatorka
+          TDO (zmieniając jego częstotliwość lub obwodu LC odbiornika) szukamy
+          częstotliwości, przy której szumy zamilkną. Zmianę częstotliwości odbieranej przez
+          odbiornik dokonujemy kręcąc trymerem C2 (najlepiej wieloobrotowym) i rozciągając lub
+          ściskając cewkę L1. Potrzebę ściśnięcia cewki możemy wykryć zbliżając rdzeń
+          ferrytowy (obniżenie częstotliwości LC), rozciągnięcia-mosiężny (wzrost
+          częstotliwości LC). W przypadku nasłuchu pasma lotniczego strojenie najlepiej
+          rozpocząć od znalezienia jakiejś stacji UKF-FM - będzie to znak, że odbiornik
+          działa. Znając częstotliwość stacji pracującej na górnej granicy UKF-FM staramy
+          się tak ją wpasować, aby zostało trochę zapasu od strony górnych częstotliwości,
+          wtedy jeśli coś usłyszymy za nią to będzie to pasmo lotnicze (118-135MHz). Taki
+          odbiornik z racji małej selektywności ma jedną istotną zaletę-odbiera całe pasmo
+          (zawsze ktośtam "gada"), nie tylko jedną częstotliwość. Ale nie ma róży bez
+          kolców - w odbieranym paśmie słychać tylko ten nadajnik, który pracuje z
+          największą mocą - w praktyce słyszysz więcej - nie musisz latać po kanałach, ale
+          jak jest za dużo stacji to się robi mętlik. Jako wzmacniacza można użyć popularnego
+          LM386-poziom dźwięku na wyjściu wystarcza do wysterowania słuchawek. Rezystor R4
+          można zmniejszyć do kilkuset Ohmów, albo zastąpić dławikiem w.cz. Dławik 100uH
+          można wykonać nawijając ok. 100zw. DNE0.1 na średnicy 3mm (użyty drut będzie miał
+          długość 35-45cm), wydobyć ze starego radioodbiornika (cewki dla fal
+          długich/średnich/p.cz) lub po prostu kupić. Wartości elementów nie są krytyczne.
+          Zalecam używanie małych pojemności i dużych indukcyjności - większa czułość i
+          mniejsze prawdopodobieństwo wzbudzenia lub "zatkania" uniemożliwiającego odbiór.
+          <strong>Uwaga:</strong> odbiornik rozsiewa wokół siebie (anteny) nieprzyjemne
+          zakłócenia ("szumy") w odległości do kilkunastu metrów, które mogą zdradzić
+          położenie nasłuchującego! Można je zminimalizować, a przy okazji poprawić
+          czułość przez zastosowanie jakiegoś przedwzmacniacza np. na BF966S i najlepiej o
+          regulowanym wzmocnieniu.
+        </p>
+        <h4>
+          Co jeśli NIE działa?:
+        </h4>
+        <p>
+          Niestety odbiorniki superreakcyjne działają słabo - problemy z uruchomieniem to
+          standard. Zanim sam zbudowalem taki odbiornik, dokładnie przyjrzałem się odbiornikowi
+          fabrycznemu (Walke-Talke), takie konstrukcje można tez często znaleźć w odbiornikach
+          zdalnie sterowanych zabawek. Gwizd, szum, różne sprzężenia są nieuniknione, ale
+          powinny zamilknąć przy odbiorze silnej stacji, chyba ze w okolicy jest ich więcej -
+          wtedy może być różnie. Dużo zależy od anteny - najlepiej zaczynać od krótkiego
+          kawałka drutu. Trzeba wypróbować różne rodzaje sprzężenia antena - LC -
+          opracowania podają sprzężenie pojemnościowe (mały kondensator do 10pF), wg mnie
+          lepiej działa sprzężenie indukcyjne-1.5zwoja na cewce obwodu LC - jeden koniec do
+          masy, drugi do anteny.
+        </p>
+        <p>
+          Koniecznie też trzeba poeksperymentować z samym obwodem LC - zwiększać liczbę
+          zwojów i jednocześnie zmniejszać pojemność i odwrotnie oraz wkładać rdzeń
+          mosiężny lub ferrytowy - w ten sposób zmieniamy dobroć obwodu nie zmieniając jego
+          częstotliwości rezonansowej - z tego co pamiętam, warto dać więcej zwojów, a
+          zmiejszyć pojemność (większa czułość). Jeśli chodzi o dławik to może to być
+          jakakolwiek cewka powietrzna (im więcej zwojów tym lepiej) - czasami pomaga
+          podłączenie równolegle do dławika rezystora ok. 470 omów.
+        </p>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li class="akt">
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li>
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="index.html">Polski</a>
+          </li>
+          <li>
+            <a href="start-en.htm">English</a>
+          </li>
+        </ul>
+        <p>
+          (C) Grzegorz Podgórski 2000-2011
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

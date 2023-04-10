@@ -1,0 +1,115 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Description" content="Wykorzystanie podczerwieni RTV do transmisji danych." />
+    <title>
+      Transmisja danych podczerwienią
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18402278-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    //]]>
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h2>
+          Elektronika, komputer, radio - blog, projekty
+        </h2><a href="https://grzegorzpod.github.io/hobby">https://grzegorzpod.github.io/hobby</a>
+      </div>
+      <div id="nav1">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="linki.htm">Linki</a>
+          </li>
+          <li>
+            <a href="start-en.htm"><img alt="English" title="English" src="gb.gif" width="30"
+            height="15" /></a>
+          </li>
+        </ul>
+      </div>
+      <div id="ad2">
+      </div>
+      <div id="body">
+        <h2>
+          Transmisja danych podczerwienią 
+        </h2>
+        <p>
+          Podczerwień modulowaną 36kHz stosowaną do zdalnego sterowania RTV można wykorzystać
+          do szeregowej transmisji danych. Stosując nadajnik i odbiornik przedstawiony poniżej
+          udało mi się uzyskać prędkość 1200bps przy zasięgu kilkunastu metrów. Prędkości
+          raczej nie da się zwiększyć powyżej 2400bps, zasięg można zwiększyć do 80m
+          stosując po stronie nadajnika mocniejszy tranzystor (np. BUZ10) i kilka diod IR
+          połączonych szeregowo, po stronie odbiornika układ optyczny np. lornetkę ;). Układ
+          ma jedną wadę - jest nieodporny na zakłócenia pochodzące od pilotów RTV, sam
+          natomiast zakłóca sterowanie sprzętem RTV. Zadaniem tranzystora BC557 jest negowanie
+          sygnału z wyjścia SFH506-36.
+        </p>
+        <h3>
+          Odbiornik IR
+        </h3><img src="ir_odb.gif" width="380" height="161" alt="Image" />
+        <div class="adp">
+        </div>
+        <h3>
+          Nadajnik IR
+        </h3><img src="ir_nad.gif" width="489" height="298" alt="Image" />
+        <div class="adp">
+        </div>
+        <p>
+          Powyższy nadajnik IR można także wykorzystać do sterowania sprzętem RTV przy pomocy
+          komputera. Programy, które to umożliwiają: <a href=
+          "download/rc5programy.zip">rc5programy - 428KB</a>
+        </p>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <a href="index.html">Start</a>
+          </li>
+          <li>
+            <a href="nasluch_radiowy.htm">Radio</a>
+          </li>
+          <li class="akt">
+            <a href="komputer.htm">Komputer</a>
+          </li>
+          <li>
+            <a href="download.htm">Download</a>
+          </li>
+          <li>
+            <a href="index.html">Polski</a>
+          </li>
+          <li>
+            <a href="start-en.htm">English</a>
+          </li>
+        </ul>
+        <p>
+          (C) Grzegorz Podgórski 2000-2011
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

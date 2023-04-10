@@ -1,0 +1,44 @@
+{
+	"folders": [
+		{
+			"path": "../../PlatformIO/Projects/ESP32-test"
+		},
+		{
+			"name": "esp32-bt",
+			"path": "../../PlatformIO/Projects/esp32-bt"
+		},
+		{
+			"name": "esp32-wifi",
+			"path": "../../PlatformIO/Projects/esp32-wifi"
+		},
+		{
+			"name": "esp32-wifi-ap",
+			"path": "../../PlatformIO/Projects/esp32-wifi-ap"
+		},
+		{
+			"name": "esp32-wifi-client",
+			"path": "../../PlatformIO/Projects/esp32-wifi-client"
+		},
+		{
+			"name": "esp32-wifi-client-powersafe",
+			"path": "../../PlatformIO/Projects/esp32-wifi-client-powersafe"
+		},
+		{
+			"name": "ESP32 volt monitor",
+			"path": "../../PlatformIO/Projects/ESP32 volt monitor"
+		},
+		{
+			"name": "Test",
+			"path": "../../pymakr/Test"
+		},
+		{
+			"name": "test",
+			"path": "../../pymakr/Test/test"
+		},
+		{
+			"name": "avr",
+			"path": "../../PlatformIO/Projects/avr"
+		}
+	],
+	"settings": {}
+}
